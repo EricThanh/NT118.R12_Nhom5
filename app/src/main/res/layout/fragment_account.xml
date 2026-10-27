@@ -120,6 +120,21 @@
             android:layout_height="1dp"
             android:layout_marginStart="16dp"
             android:background="@color/border" />
+        <TextView
+            android:id="@+id/menu_my_shop"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:text="Cửa hàng của tôi"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/border" />
 
         <TextView
             android:id="@+id/menu_settings"
