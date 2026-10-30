@@ -53,6 +53,18 @@
             android:name=".SuccessActivity"
             android:exported="false"
             android:theme="@style/Theme.NT118R12" />
+
+        <activity
+            android:name=".CustomerOrdersActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".OrderTrackingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DeliveryAddressActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
