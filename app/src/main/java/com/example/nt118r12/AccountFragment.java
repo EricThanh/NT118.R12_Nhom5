@@ -18,6 +18,11 @@ public class AccountFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
 
+        view.findViewById(R.id.menu_orders).setOnClickListener(v ->
+                startActivity(new Intent(getActivity(), CustomerOrdersActivity.class)));
+        view.findViewById(R.id.menu_address).setOnClickListener(v ->
+                startActivity(new Intent(getActivity(), DeliveryAddressActivity.class)));
+
         AppCompatButton btnLogout = view.findViewById(R.id.btn_logout);
         btnLogout.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), LoginActivity.class);
