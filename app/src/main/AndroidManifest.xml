@@ -33,9 +33,7 @@
             android:name=".RegisterActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".SignUpActivity"
-            android:exported="false" />
+
 
         <activity
             android:name=".MainActivity"

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         navCart.setOnClickListener(v -> switchFragment(new CartFragment(), navCart));
         navAccount.setOnClickListener(v -> switchFragment(new AccountFragment(), navAccount));
 
-        // Load default fragment
+
         if (savedInstanceState == null) {
             switchFragment(new HomeFragment(), navHome);
         }
