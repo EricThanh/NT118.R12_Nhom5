@@ -72,8 +72,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
                 statusBg = R.drawable.bg_status_shipping;
                 statusColor = R.color.primary;
                 statusText = "Đang giao";
-                actionText = "Theo dõi";
-                primaryAction = true;
+                actionText = "Xem chi tiết";
+                primaryAction = false;
                 break;
             case Order.STATUS_DELIVERED:
                 statusBg = R.drawable.bg_status_delivered;

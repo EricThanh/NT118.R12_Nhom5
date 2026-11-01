@@ -88,19 +88,13 @@ public class CustomerOrdersActivity extends AppCompatActivity {
     }
 
     private void onOrderAction(Order order) {
-        switch (order.getStatus()) {
-            case Order.STATUS_SHIPPING:
-                Intent intent = new Intent(this, OrderTrackingActivity.class);
-                intent.putExtra(OrderTrackingActivity.EXTRA_ORDER_ID, order.getId());
-                startActivity(intent);
-                break;
-            case Order.STATUS_DELIVERED:
-                Toast.makeText(this, "Đã thêm " + order.getProductName() + " vào giỏ hàng", Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                Toast.makeText(this, "Chi tiết đơn #" + order.getId(), Toast.LENGTH_SHORT).show();
-                break;
+        if (order.getStatus() == Order.STATUS_DELIVERED) {
+            Toast.makeText(this, "Đã thêm " + order.getProductName() + " vào giỏ hàng", Toast.LENGTH_SHORT).show();
+            return;
         }
+        Intent intent = new Intent(this, OrderTrackingActivity.class);
+        intent.putExtra(OrderTrackingActivity.EXTRA_ORDER_ID, order.getId());
+        startActivity(intent);
     }
 
     static void applySystemBarInsets(View root) {
