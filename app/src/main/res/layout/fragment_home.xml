@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Header Container: Sẽ được padding-top bằng Java để tránh status bar -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/header_container"
             android:layout_width="0dp"
@@ -23,7 +22,8 @@
                 android:id="@+id/et_search"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
-                android:layout_marginHorizontal="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="12dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="64dp"
                 android:background="@drawable/bg_search"
@@ -37,12 +37,24 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_filter" />
+
+            <ImageView
+                android:id="@+id/iv_filter"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/bg_filter_button"
+                android:padding="12dp"
+                android:src="@drawable/ic_filter"
+                android:contentDescription="Lọc và sắp xếp"
+                app:tint="@color/primary"
+                app:layout_constraintTop_toTopOf="@id/et_search"
+                app:layout_constraintBottom_toBottomOf="@id/et_search"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Icon search giả lập bằng drawableStart nếu cần, nhưng yêu cầu có icon -->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Banner đè lên header -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_banner"
             android:layout_width="0dp"
@@ -61,7 +73,6 @@
                 android:layout_height="wrap_content"
                 android:background="@color/surface">
 
-                <!-- Viền mảnh (dùng view vì card không có strokeWidth natively nếu ko dùng MaterialCardView) -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -127,7 +138,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Chỉ báo trang (Dots) -->
         <LinearLayout
             android:id="@+id/ll_dots"
             android:layout_width="wrap_content"
@@ -143,7 +153,6 @@
             <View android:layout_width="8dp" android:layout_height="8dp" android:layout_margin="4dp" android:background="@drawable/bg_btn_disabled" />
         </LinearLayout>
 
-        <!-- Danh mục (Categories) -->
         <LinearLayout
             android:id="@+id/ll_categories"
             android:layout_width="0dp"
@@ -157,7 +166,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- Nam -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -184,7 +192,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Nữ -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -211,7 +218,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Trẻ em -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -238,7 +244,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Giảm giá -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -266,7 +271,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Sản phẩm mới Header -->
         <TextView
             android:id="@+id/tv_new_products"
             android:layout_width="wrap_content"
