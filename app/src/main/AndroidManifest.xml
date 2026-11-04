@@ -52,6 +52,17 @@
             android:exported="false"
             android:theme="@style/Theme.NT118R12" />
 
+        <activity
+            android:name=".CustomerOrdersActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".OrderTrackingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DeliveryAddressActivity"
+            android:exported="false" />
         <!-- Seller (feature/seller) -->
         <activity
             android:name=".seller.SellerHomepageActivity"

@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="20dp">
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_drag_handle" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Lọc &amp; sắp xếp"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvReset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Đặt lại"
+                android:textColor="@color/primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Sắp xếp theo"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/chipSortPopular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_selected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="Phổ biến"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/chipSortBestSeller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="Bán chạy"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/chipSortPriceAsc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="Giá thấp → cao"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/chipSortPriceDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="Giá cao → thấp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/chipSortNewest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="Mới nhất"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Khoảng giá"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/sliderPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="10"
+            android:valueFrom="0"
+            android:valueTo="500"
+            app:values="@array/filter_price_default"
+            app:labelBehavior="gone"
+            app:haloColor="@color/primary_light"
+            app:thumbColor="@color/primary"
+            app:tickColor="@android:color/transparent"
+            app:trackColorActive="@color/primary"
+            app:trackColorInactive="@color/border" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tối thiểu"
+                    android:textColor="@color/text_gray"
+                    android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/tvPriceMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$50"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <View
+                android:layout_width="12dp"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@color/text_gray" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tối đa"
+                    android:textColor="@color/text_gray"
+                    android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/tvPriceMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$250"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Danh mục"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/chipCatRunning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_selected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="Chạy bộ"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/chipCatLifestyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="Lifestyle"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/chipCatBasketball"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="Bóng rổ"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/chipCatTraining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="Tập luyện"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Kích cỡ"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/chipSize39"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_unselected"
+                android:gravity="center"
+                android:text="39"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/chipSize40"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_unselected"
+                android:gravity="center"
+                android:text="40"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/chipSize41"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_selected"
+                android:gravity="center"
+                android:text="41"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/chipSize42"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_selected"
+                android:gravity="center"
+                android:text="42"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/chipSize43"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_chip_unselected"
+                android:gravity="center"
+                android:text="43"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Màu sắc"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <FrameLayout
+                android:id="@+id/swatchBlack"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_swatch_ring_selected"
+                android:contentDescription="Black"
+                android:padding="4dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_swatch"
+                    android:backgroundTint="#1F2430" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/swatchWhite"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_swatch_ring_unselected"
+                android:contentDescription="White"
+                android:padding="4dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_swatch" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/swatchGray"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_swatch_ring_unselected"
+                android:contentDescription="Gray"
+                android:padding="4dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_swatch"
+                    android:backgroundTint="#9AA3AE" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/swatchBlue"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_swatch_ring_unselected"
+                android:contentDescription="Blue"
+                android:padding="4dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_swatch"
+                    android:backgroundTint="#1152FD" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/swatchRed"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_swatch_ring_unselected"
+                android:contentDescription="Red"
+                android:padding="4dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_swatch"
+                    android:backgroundTint="#EB001B" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/swatchBeige"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_swatch_ring_unselected"
+                android:contentDescription="Beige"
+                android:padding="4dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_swatch"
+                    android:backgroundTint="#E8D9C0" />
+            </FrameLayout>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnApplyFilter"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_btn_primary"
+            android:stateListAnimator="@null"
+            android:text="Hiển thị 12 kết quả"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

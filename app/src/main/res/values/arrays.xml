@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="filter_price_default">
+        <item>50.0</item>
+        <item>250.0</item>
+    </array>
+</resources>

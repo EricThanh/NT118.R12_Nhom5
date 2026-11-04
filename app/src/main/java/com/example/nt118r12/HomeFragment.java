@@ -31,7 +31,6 @@ public class HomeFragment extends Fragment {
 
         RecyclerView rvNewProducts = view.findViewById(R.id.rv_new_products);
 
-
         List<Product> productList = new ArrayList<>();
         productList.add(new Product("Nike React Miler", 170.0, false));
         productList.add(new Product("Nike Air Max 270", 112.0, true));
@@ -43,6 +42,8 @@ public class HomeFragment extends Fragment {
         });
         rvNewProducts.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         rvNewProducts.setAdapter(productAdapter);
+
+        view.findViewById(R.id.iv_filter).setOnClickListener(v -> FilterSortBottomSheet.show(requireContext()));
 
         return view;
     }
@@ -56,13 +57,11 @@ public class HomeFragment extends Fragment {
         ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
             int topInset = insets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout()).top;
 
-
             int extraPaddingPx = (int) TypedValue.applyDimension(
                     TypedValue.COMPLEX_UNIT_DIP,
                     16,
                     getResources().getDisplayMetrics()
             );
-
 
             headerContainer.setPadding(
                     headerContainer.getPaddingLeft(),
@@ -70,7 +69,6 @@ public class HomeFragment extends Fragment {
                     headerContainer.getPaddingRight(),
                     headerContainer.getPaddingBottom()
             );
-
 
             return insets;
         });
