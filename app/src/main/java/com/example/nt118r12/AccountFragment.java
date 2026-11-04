@@ -26,6 +26,9 @@ public class AccountFragment extends Fragment {
             startActivity(intent);
         });
 
+        view.findViewById(R.id.menu_my_shop).setOnClickListener(v ->
+                startActivity(new Intent(getActivity(), com.example.nt118r12.seller.SellerHomepageActivity.class)));
+
         return view;
     }
 }

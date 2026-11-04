@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- Header: avatar 53dp, lời chào, chuông 60dp -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="36dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:background="@drawable/seller_bg_home_avatar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="6dp"
+                    android:text="Welcome back\nLuka’s shop!"
+                    android:textColor="@color/seller_ink"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/btn_notification"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/seller_bg_bell"
+                    android:contentDescription="Notifications"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_seller_bell" />
+            </LinearLayout>
+
+            <!-- Banner 326x131 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="131dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="23dp"
+                android:background="@drawable/seller_bg_banner" />
+
+            <!-- 3 thẻ thống kê 100x60, gap 16 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="26dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_home_stat_1"
+                    style="@style/SellerHomeStat"
+                    android:text="5\nNew Orders" />
+
+                <TextView
+                    android:id="@+id/tv_home_stat_2"
+                    style="@style/SellerHomeStat"
+                    android:layout_marginStart="16dp"
+                    android:text="5\nNew Products" />
+
+                <TextView
+                    android:id="@+id/tv_home_stat_3"
+                    style="@style/SellerHomeStat"
+                    android:layout_marginStart="16dp"
+                    android:text="5\nNew Orders" />
+            </LinearLayout>
+
+            <!-- 2 nút 137x41, gap 40 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="29dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_home_add_product"
+                    android:layout_width="137dp"
+                    android:layout_height="41dp"
+                    android:background="@drawable/seller_bg_home_add"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Add Product"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/btn_home_view_orders"
+                    android:layout_width="137dp"
+                    android:layout_height="41dp"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/seller_bg_home_view"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="View Orders"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Thẻ sản phẩm 303x114 -->
+            <LinearLayout
+                style="@style/SellerHomeCard"
+                android:layout_marginTop="23dp">
+
+                <View style="@style/SellerHomeThumb" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SellerHomeName"
+                        android:text="Nike React Miler" />
+
+                    <TextView
+                        style="@style/SellerHomePrice"
+                        android:text="$170.00" />
+
+                    <LinearLayout style="@style/SellerHomeQtyRow">
+
+                        <TextView
+                            android:id="@+id/btn_qty_minus_1"
+                            style="@style/SellerHomeQtyButton"
+                            android:text="-" />
+
+                        <TextView
+                            android:id="@+id/tv_qty_1"
+                            style="@style/SellerHomeQtyBox"
+                            android:text="1" />
+
+                        <TextView
+                            android:id="@+id/btn_qty_plus_1"
+                            style="@style/SellerHomeQtyButton"
+                            android:text="+" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/SellerHomeCard"
+                android:layout_marginTop="16dp">
+
+                <View style="@style/SellerHomeThumb" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SellerHomeName"
+                        android:text="Nike Air Max 270" />
+
+                    <TextView
+                        style="@style/SellerHomePrice"
+                        android:text="$112.00" />
+
+                    <LinearLayout style="@style/SellerHomeQtyRow">
+
+                        <TextView
+                            android:id="@+id/btn_qty_minus_2"
+                            style="@style/SellerHomeQtyButton"
+                            android:text="-" />
+
+                        <TextView
+                            android:id="@+id/tv_qty_2"
+                            style="@style/SellerHomeQtyBox"
+                            android:text="1" />
+
+                        <TextView
+                            android:id="@+id/btn_qty_plus_2"
+                            style="@style/SellerHomeQtyButton"
+                            android:text="+" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/layout_bottom_nav" />
+</LinearLayout>
