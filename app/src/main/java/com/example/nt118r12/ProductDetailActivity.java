@@ -1,209 +1,271 @@
 package com.example.nt118r12;
 
-import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.core.view.WindowCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
-import com.example.nt118r12.adapters.ProductAdapter;
+
 import com.example.nt118r12.models.Product;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-import java.util.ArrayList;
+
+import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductDetailActivity extends AppCompatActivity {
+    public static final String PRODUCT_EXTRA = "PRODUCT_EXTRA";
 
     private Product product;
-    private View layoutHeader;
-    private View layoutBottomAction;
+    private int quantity = 1;
+    private boolean isDescriptionExpanded = false;
+    private String selectedColorName = "White / Blue";
+    private String selectedSize = "41";
+
+    private TextView tvProductName, tvProductPrice, tvSelectedColor, tvDescription, tvReadMore, tvQuantity, btnAddToCart;
+    private ImageView btnFavorite;
+    private ViewPager2 vpSlider;
+    private TextView tvSliderIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         setContentView(R.layout.activity_product_detail);
 
-        layoutHeader = findViewById(R.id.layout_header);
-        layoutBottomAction = findViewById(R.id.layout_bottom_action);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (v, windowInsets) -> {
-            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
-            layoutHeader.setPadding(0, insets.top, 0, 0);
-            layoutBottomAction.setPadding(0, 0, 0, insets.bottom);
-            return WindowInsetsCompat.CONSUMED;
-        });
-
-        product = (Product) getIntent().getSerializableExtra("PRODUCT_EXTRA");
+        product = (Product) getIntent().getSerializableExtra(PRODUCT_EXTRA);
         if (product == null) {
-            product = new Product("Giày Thể Thao Mẫu A", 250000.0, false);
+            product = new Product("Nike Air Max 270", 160.0, true);
         }
 
-        bindData();
-        setupEvents();
-        setupDummyData();
+        initViews();
+        setupImageSlider();
+        setupColorSwatches();
+        setupSizeChips();
+        setupDescriptionToggle();
+        setupQuantityControls();
     }
 
-    private void bindData() {
-        TextView tvHeaderTitle = findViewById(R.id.tv_header_title);
-        TextView tvHeaderPrice = findViewById(R.id.tv_header_price);
-        TextView tvProductName = findViewById(R.id.tv_product_name);
-        TextView tvDiscountPrice = findViewById(R.id.tv_discount_price);
+    private void initViews() {
+        tvProductName = findViewById(R.id.tv_product_name);
+        tvProductPrice = findViewById(R.id.tv_product_price);
+        tvSelectedColor = findViewById(R.id.tv_selected_color);
+        tvDescription = findViewById(R.id.tv_description);
+        tvReadMore = findViewById(R.id.tv_read_more);
+        tvQuantity = findViewById(R.id.tv_quantity);
+        btnAddToCart = findViewById(R.id.btn_add_to_cart);
+        btnFavorite = findViewById(R.id.btn_favorite);
+        vpSlider = findViewById(R.id.vp_product_slider);
+        tvSliderIndicator = findViewById(R.id.tv_slider_indicator);
 
-        tvHeaderTitle.setText(product.getName());
-        tvHeaderPrice.setText(String.format("%,.0f đ", product.getPrice()));
         tvProductName.setText(product.getName());
-        tvDiscountPrice.setText(String.format("%,.0f đ", product.getPrice()));
+        tvProductPrice.setText(String.format(Locale.US, "$%.2f", product.getPrice()));
 
-        TextView tvOriginalPrice = findViewById(R.id.tv_original_price);
-        if (tvOriginalPrice != null) {
-            double originalPrice = product.getPrice() / 0.75;
-            tvOriginalPrice.setText(String.format("%,.0f đ", originalPrice));
+        findViewById(R.id.btn_back).setOnClickListener(v -> finish());
 
-            tvOriginalPrice.setPaintFlags(tvOriginalPrice.getPaintFlags() | android.graphics.Paint.STRIKE_THRU_TEXT_FLAG);
-        }
-        ViewPager2 viewPagerImages = findViewById(R.id.view_pager_images);
-        viewPagerImages.setAdapter(new RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+        updateFavoriteIcon(product.isFavorite());
+        btnFavorite.setOnClickListener(v -> {
+            product.setFavorite(!product.isFavorite());
+            updateFavoriteIcon(product.isFavorite());
+            Toast.makeText(this, product.isFavorite() ? "Added to Wishlist" : "Removed from Wishlist", Toast.LENGTH_SHORT).show();
+        });
+
+        findViewById(R.id.tv_size_guide).setOnClickListener(v ->
+                Toast.makeText(this, "Standard EU shoe sizing chart", Toast.LENGTH_SHORT).show());
+
+        findViewById(R.id.tv_see_all_reviews).setOnClickListener(v ->
+                Toast.makeText(this, "Opening full reviews list", Toast.LENGTH_SHORT).show());
+    }
+
+    private void updateFavoriteIcon(boolean isFav) {
+        btnFavorite.setColorFilter(ContextCompat.getColor(this,
+                isFav ? android.R.color.holo_red_dark : R.color.seller_ink));
+    }
+
+    private void setupImageSlider() {
+        List<Integer> dummyImages = Arrays.asList(
+                R.drawable.placeholder_shoe,
+                R.drawable.placeholder_shoe,
+                R.drawable.placeholder_shoe
+        );
+
+        vpSlider.setAdapter(new RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             @NonNull
             @Override
             public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                android.widget.ImageView iv = new android.widget.ImageView(parent.getContext());
-                iv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-                iv.setScaleType(android.widget.ImageView.ScaleType.CENTER_CROP);
+                ImageView iv = new ImageView(parent.getContext());
+                iv.setLayoutParams(new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+                iv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                iv.setPadding(32, 32, 32, 32);
                 return new RecyclerView.ViewHolder(iv) {};
             }
 
             @Override
             public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-                ((android.widget.ImageView) holder.itemView).setImageResource(R.drawable.placeholder_shoe);
+                ((ImageView) holder.itemView).setImageResource(dummyImages.get(position));
             }
 
             @Override
             public int getItemCount() {
-                return 3;
+                return dummyImages.size();
             }
         });
 
+        vpSlider.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tvSliderIndicator.setText((position + 1) + "/" + dummyImages.size());
+            }
+        });
     }
 
-    private void setupEvents() {
-        findViewById(R.id.btn_back).setOnClickListener(v -> finish());
-
-        findViewById(R.id.btn_add_to_cart).setOnClickListener(v -> showBottomSheet("ADD_CART"));
-        findViewById(R.id.btn_buy_now).setOnClickListener(v -> showBottomSheet("BUY_NOW"));
+    private static class ColorItem {
+        final String name;
+        final int color;
+        ColorItem(String name, int color) { this.name = name; this.color = color; }
     }
 
-    private void showBottomSheet(String mode) {
-        BottomSheetDialog dialog = new BottomSheetDialog(this);
-        View view = getLayoutInflater().inflate(R.layout.bottom_sheet_product_options, null);
-        dialog.setContentView(view);
+    private void setupColorSwatches() {
+        RecyclerView rvColors = findViewById(R.id.rv_color_swatches);
+        rvColors.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        TextView tvOptionPrice = view.findViewById(R.id.tvOptionPrice);
-        tvOptionPrice.setText(String.format("%,.0f đ", product.getPrice()));
+        List<ColorItem> colors = Arrays.asList(
+                new ColorItem("White / Blue", Color.parseColor("#EBF3FC")),
+                new ColorItem("Obsidian Black", Color.parseColor("#1F1F1F")),
+                new ColorItem("Crimson Red", Color.parseColor("#E53935")),
+                new ColorItem("Neutral Olive", Color.parseColor("#708238"))
+        );
 
-        int[] sizeIds = {
-            R.id.tvSize36, R.id.tvSize37, R.id.tvSize38, R.id.tvSize39,
-            R.id.tvSize40, R.id.tvSize41, R.id.tvSize42, R.id.tvSize43, R.id.tvSize44
-        };
+        final int[] selectedIndex = {0};
+        selectedColorName = colors.get(0).name;
+        tvSelectedColor.setText("Color: " + selectedColorName);
 
-        List<TextView> tvSizes = new ArrayList<>();
-        final String[] selectedSize = {null};
-        androidx.appcompat.widget.AppCompatButton btnConfirm = view.findViewById(R.id.btnConfirm);
-        btnConfirm.setEnabled(false);
-        btnConfirm.setBackgroundResource(R.color.bg_gray_light);
-
-        for (int id : sizeIds) {
-            TextView tv = view.findViewById(id);
-            if (tv != null) {
-                tvSizes.add(tv);
-                tv.setOnClickListener(v -> {
-                    for (TextView t : tvSizes) {
-                        t.setBackgroundResource(R.drawable.bg_chip_unselected);
-                    }
-                    tv.setBackgroundResource(R.drawable.bg_chip_selected);
-                    selectedSize[0] = tv.getText().toString();
-                    
-                    btnConfirm.setEnabled(true);
-                    btnConfirm.setBackgroundResource(R.color.primary);
-                });
-            }
-        }
-
-        TextView tvQuantity = view.findViewById(R.id.tvQuantity);
-        final int[] quantity = {1};
-
-        view.findViewById(R.id.btnDecreaseQty).setOnClickListener(v -> {
-            if (quantity[0] > 1) {
-                quantity[0]--;
-                tvQuantity.setText(String.valueOf(quantity[0]));
-            }
-        });
-
-        view.findViewById(R.id.btnIncreaseQty).setOnClickListener(v -> {
-            quantity[0]++;
-            tvQuantity.setText(String.valueOf(quantity[0]));
-        });
-
-        btnConfirm.setOnClickListener(v -> {
-            if (mode.equals("ADD_CART")) {
-                Toast.makeText(this, "Đã thêm vào giỏ hàng: size " + selectedSize[0] + ", SL: " + quantity[0], Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            } else {
-                dialog.dismiss();
-                startActivity(new Intent(this, CheckoutActivity.class));
-            }
-        });
-
-        dialog.show();
-    }
-
-    private void setupDummyData() {
-        // Similar products
-        RecyclerView rvSimilar = findViewById(R.id.rv_similar_products);
-        rvSimilar.setLayoutManager(new GridLayoutManager(this, 2));
-        List<Product> similarProducts = new ArrayList<>();
-        for (int i = 1; i <= 4; i++) {
-            similarProducts.add(new Product("Giày Tương Tự " + i, product.getPrice() - 10000, false));
-        }
-        ProductAdapter adapter = new ProductAdapter(similarProducts, false, p -> {
-            Intent intent = new Intent(this, ProductDetailActivity.class);
-            intent.putExtra("PRODUCT_EXTRA", p);
-            startActivity(intent);
-        });
-        rvSimilar.setAdapter(adapter);
-
-
-        RecyclerView rvReviews = findViewById(R.id.rv_reviews);
-        rvReviews.setLayoutManager(new LinearLayoutManager(this));
-        rvReviews.setAdapter(new RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+        rvColors.setAdapter(new RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             @NonNull
             @Override
             public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_review, parent, false);
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_color_swatch, parent, false);
                 return new RecyclerView.ViewHolder(v) {};
             }
+
             @Override
             public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-                TextView tvUser = holder.itemView.findViewById(R.id.tv_review_user);
-                TextView tvContent = holder.itemView.findViewById(R.id.tv_review_content);
-                if (tvUser != null) tvUser.setText("Người dùng " + (position + 1));
-                if (tvContent != null) tvContent.setText("Sản phẩm 5 sao");
+                View ring = holder.itemView.findViewById(R.id.view_swatch_ring);
+                View colorView = holder.itemView.findViewById(R.id.view_swatch_color);
+
+                ColorItem item = colors.get(position);
+
+                GradientDrawable bg = new GradientDrawable();
+                bg.setShape(GradientDrawable.OVAL);
+                bg.setColor(item.color);
+                bg.setStroke(2, ContextCompat.getColor(ProductDetailActivity.this, R.color.seller_border));
+                colorView.setBackground(bg);
+
+                ring.setVisibility(position == selectedIndex[0] ? View.VISIBLE : View.GONE);
+
+                holder.itemView.setOnClickListener(v -> {
+                    int prev = selectedIndex[0];
+                    selectedIndex[0] = holder.getAdapterPosition();
+                    selectedColorName = item.name;
+                    tvSelectedColor.setText("Color: " + selectedColorName);
+                    notifyItemChanged(prev);
+                    notifyItemChanged(selectedIndex[0]);
+                });
             }
+
             @Override
             public int getItemCount() {
-                return 3;
+                return colors.size();
             }
         });
+    }
+
+    private void setupSizeChips() {
+        RecyclerView rvSizes = findViewById(R.id.rv_sizes);
+        rvSizes.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        List<String> sizes = Arrays.asList("38", "39", "40", "41", "42", "43", "44");
+        final int[] selectedSizeIndex = {3};
+
+        rvSizes.setAdapter(new RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+            @NonNull
+            @Override
+            public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_size_chip, parent, false);
+                return new RecyclerView.ViewHolder(v) {};
+            }
+
+            @Override
+            public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+                TextView tvChip = (TextView) holder.itemView;
+                String size = sizes.get(position);
+                tvChip.setText(size);
+
+                boolean isSelected = position == selectedSizeIndex[0];
+                tvChip.setBackgroundResource(isSelected ? R.drawable.seller_bg_ink_r8 : R.drawable.seller_bg_btn_outlined);
+                tvChip.setTextColor(ContextCompat.getColor(ProductDetailActivity.this,
+                        isSelected ? R.color.white : R.color.seller_ink));
+
+                holder.itemView.setOnClickListener(v -> {
+                    int prev = selectedSizeIndex[0];
+                    selectedSizeIndex[0] = holder.getAdapterPosition();
+                    selectedSize = size;
+                    notifyItemChanged(prev);
+                    notifyItemChanged(selectedSizeIndex[0]);
+                });
+            }
+
+            @Override
+            public int getItemCount() {
+                return sizes.size();
+            }
+        });
+    }
+
+    private void setupDescriptionToggle() {
+        tvReadMore.setOnClickListener(v -> {
+            isDescriptionExpanded = !isDescriptionExpanded;
+            tvDescription.setMaxLines(isDescriptionExpanded ? Integer.MAX_VALUE : 3);
+            tvReadMore.setText(isDescriptionExpanded ? "Show less" : "Read more");
+        });
+    }
+
+    private void setupQuantityControls() {
+        updateBottomBarPrice();
+
+        findViewById(R.id.btn_decrease_qty).setOnClickListener(v -> {
+            if (quantity > 1) {
+                quantity--;
+                tvQuantity.setText(String.valueOf(quantity));
+                updateBottomBarPrice();
+            }
+        });
+
+        findViewById(R.id.btn_increase_qty).setOnClickListener(v -> {
+            quantity++;
+            tvQuantity.setText(String.valueOf(quantity));
+            updateBottomBarPrice();
+        });
+
+        btnAddToCart.setOnClickListener(v -> {
+            String summary = "Added " + quantity + "x " + product.getName()
+                    + " (" + selectedColorName + ", Size " + selectedSize + ") to cart!";
+            Toast.makeText(this, summary, Toast.LENGTH_LONG).show();
+        });
+    }
+
+    private void updateBottomBarPrice() {
+        double total = product.getPrice() * quantity;
+        btnAddToCart.setText(String.format(Locale.US, "Add to cart - $%.2f", total));
     }
 }

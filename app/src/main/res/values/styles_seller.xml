@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="SellerOrderTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="textAllCaps">false</item>
+    </style>
     <!-- Tab lọc ở màn SellerProduct: cao 31dp, cách nhau 8dp -->
     <style name="SellerTab">
         <item name="android:layout_width">wrap_content</item>

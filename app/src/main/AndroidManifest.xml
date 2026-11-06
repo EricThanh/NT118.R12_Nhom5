@@ -77,6 +77,12 @@
             android:name=".seller.AddProductActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".seller.SellerOrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".seller.OrderDetailsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
