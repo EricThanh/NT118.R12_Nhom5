@@ -1,6 +1,7 @@
 package com.example.nt118r12;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -73,8 +74,9 @@ public class CustomerOrdersActivity extends AppCompatActivity {
     private void selectTab(int index, int status) {
         for (int i = 0; i < tabs.length; i++) {
             boolean selected = i == index;
-            tabs[i].setBackgroundResource(selected ? R.drawable.bg_chip_selected : R.drawable.bg_chip_unselected);
-            tabs[i].setTextColor(ContextCompat.getColor(this, selected ? R.color.white : R.color.text_primary));
+            tabs[i].setBackgroundResource(0);
+            tabs[i].setTypeface(null, selected ? Typeface.BOLD : Typeface.NORMAL);
+            tabs[i].setTextColor(ContextCompat.getColor(this, selected ? R.color.status_orange : R.color.text_primary));
         }
 
         List<Order> filtered = new ArrayList<>();

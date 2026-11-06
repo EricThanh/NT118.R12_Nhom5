@@ -5,29 +5,29 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/surface">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerLayout"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:background="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/surface"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/ivBack"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
+            android:contentDescription="Quay lại"
             android:padding="12dp"
             android:src="@drawable/ic_back"
-            android:contentDescription="Quay lại"
-            app:tint="@color/text_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:tint="@color/text_primary" />
 
         <TextView
             android:id="@+id/tvHeaderTitle"
@@ -35,12 +35,12 @@
             android:layout_height="wrap_content"
             android:text="Đơn #1019"
             android:textColor="@color/text_primary"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
@@ -48,10 +48,11 @@
         android:layout_height="0dp"
         android:background="@color/bg_gray_light"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        android:overScrollMode="never"
         app:layout_constraintBottom_toTopOf="@id/bottomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/headerLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,8 +83,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Dự kiến giao hàng"
-                            android:textColor="@color/white_70"
-                            android:textSize="12sp" />
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/tvEstimatedDate"
@@ -92,7 +93,7 @@
                             android:layout_marginTop="4dp"
                             android:text="Thứ 5, 23/10"
                             android:textColor="@color/white"
-                            android:textSize="22sp"
+                            android:textSize="24sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -100,9 +101,9 @@
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:background="@drawable/bg_circle_white_20"
+                        android:contentDescription="Vận chuyển"
                         android:padding="12dp"
                         android:src="@drawable/ic_shipping"
-                        android:contentDescription="Vận chuyển"
                         app:tint="@color/white" />
                 </LinearLayout>
 
@@ -119,8 +120,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="GHN · 8A2K9X41VN"
-                        android:textColor="@color/white_70"
-                        android:textSize="13sp" />
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
 
                     <LinearLayout
                         android:id="@+id/btnCopy"
@@ -129,12 +130,12 @@
                         android:background="@drawable/bg_pill_white_20"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="4dp">
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp">
 
                         <ImageView
-                            android:layout_width="14dp"
-                            android:layout_height="14dp"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
                             android:src="@drawable/ic_copy"
                             app:tint="@color/white" />
 
@@ -144,7 +145,7 @@
                             android:layout_marginStart="4dp"
                             android:text="Sao chép"
                             android:textColor="@color/white"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -163,7 +164,7 @@
                     android:layout_marginBottom="16dp"
                     android:text="Trạng thái đơn hàng"
                     android:textColor="@color/text_primary"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -184,9 +185,10 @@
                             android:padding="3dp"
                             android:src="@drawable/ic_check"
                             app:tint="@color/white" />
+
                         <View
                             android:layout_width="2dp"
-                            android:layout_height="44dp"
+                            android:layout_height="52dp"
                             android:background="@color/primary" />
                     </LinearLayout>
 
@@ -202,15 +204,16 @@
                             android:layout_height="wrap_content"
                             android:text="Đặt hàng thành công"
                             android:textColor="@color/text_primary"
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="22/10/2026 · 09:30"
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                            android:textColor="@color/text_body"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -232,9 +235,10 @@
                             android:padding="3dp"
                             android:src="@drawable/ic_check"
                             app:tint="@color/white" />
+
                         <View
                             android:layout_width="2dp"
-                            android:layout_height="44dp"
+                            android:layout_height="52dp"
                             android:background="@color/primary" />
                     </LinearLayout>
 
@@ -250,15 +254,16 @@
                             android:layout_height="wrap_content"
                             android:text="Người bán đã xác nhận"
                             android:textColor="@color/text_primary"
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="22/10/2026 · 10:15"
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                            android:textColor="@color/text_body"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -280,9 +285,10 @@
                             android:padding="3dp"
                             android:src="@drawable/ic_check"
                             app:tint="@color/white" />
+
                         <View
                             android:layout_width="2dp"
-                            android:layout_height="44dp"
+                            android:layout_height="52dp"
                             android:background="@color/primary" />
                     </LinearLayout>
 
@@ -298,15 +304,16 @@
                             android:layout_height="wrap_content"
                             android:text="Đã giao cho đơn vị vận chuyển"
                             android:textColor="@color/text_primary"
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="22/10/2026 · 16:40"
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                            android:textColor="@color/text_body"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -325,9 +332,10 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:background="@drawable/bg_timeline_current" />
+
                         <View
                             android:layout_width="2dp"
-                            android:layout_height="64dp"
+                            android:layout_height="76dp"
                             android:background="@color/border" />
                     </LinearLayout>
 
@@ -343,25 +351,27 @@
                             android:layout_height="wrap_content"
                             android:text="Đang vận chuyển"
                             android:textColor="@color/primary"
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="23/10/2026 · 08:05"
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                            android:textColor="@color/text_body"
+                            android:textSize="14sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
                             android:background="@drawable/bg_tag_default"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="4dp"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp"
                             android:text="Đã đến kho Quận 7, TP.HCM"
                             android:textColor="@color/primary"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -380,9 +390,10 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:background="@drawable/bg_timeline_pending" />
+
                         <View
                             android:layout_width="2dp"
-                            android:layout_height="44dp"
+                            android:layout_height="52dp"
                             android:background="@color/border" />
                     </LinearLayout>
 
@@ -397,15 +408,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Đang giao hàng"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            android:textColor="@color/text_body"
+                            android:textSize="16sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="Dự kiến 23/10/2026"
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                            android:textColor="@color/text_body"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -437,8 +449,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Đã giao hàng"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            android:textColor="@color/text_body"
+                            android:textSize="16sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -453,12 +465,12 @@
                 android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/bg_category_icon"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_location"
                     android:contentDescription="Địa chỉ"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_location"
                     app:tint="@color/primary" />
 
                 <LinearLayout
@@ -472,8 +484,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Địa chỉ nhận hàng"
-                        android:textColor="@color/text_gray"
-                        android:textSize="12sp" />
+                        android:textColor="@color/text_body"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -481,7 +493,7 @@
                         android:layout_marginTop="4dp"
                         android:text="Nguyễn Văn A · 0123 456 789"
                         android:textColor="@color/text_primary"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -489,8 +501,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:text="123 Đường ABC, Phường 5, Quận 3, TP.HCM"
-                        android:textColor="@color/text_gray"
-                        android:textSize="13sp" />
+                        android:textColor="@color/text_body"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -504,13 +516,13 @@
                 android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:background="@drawable/bg_category_icon"
-                    android:padding="6dp"
+                    android:contentDescription="Sản phẩm"
+                    android:padding="8dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/placeholder_shoe"
-                    android:contentDescription="Sản phẩm" />
+                    android:src="@drawable/placeholder_shoe" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -524,7 +536,7 @@
                         android:layout_height="wrap_content"
                         android:text="Nike Air Max 270"
                         android:textColor="@color/text_primary"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -532,16 +544,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Size 41 · x2"
-                        android:textColor="@color/text_gray"
-                        android:textSize="12sp" />
+                        android:textColor="@color/text_body"
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$224.00"
-                    android:textColor="@color/primary"
-                    android:textSize="15sp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
@@ -551,39 +563,56 @@
         android:id="@+id/bottomLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:elevation="8dp"
-        android:orientation="horizontal"
-        android:padding="16dp"
+        android:background="@color/surface"
+        android:elevation="0dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnContactSeller"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="12dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_btn_outline_primary"
-            android:stateListAnimator="@null"
-            android:text="Liên hệ người bán"
-            android:textAllCaps="false"
-            android:textColor="@color/primary"
-            android:textStyle="bold" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/border" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnReceived"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_btn_disabled"
-            android:enabled="false"
-            android:stateListAnimator="@null"
-            android:text="Đã nhận hàng"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnContactSeller"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_outline_primary"
+                android:elevation="0dp"
+                android:minHeight="0dp"
+                android:stateListAnimator="@null"
+                android:text="Liên hệ người bán"
+                android:textAllCaps="false"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReceived"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_disabled"
+                android:elevation="0dp"
+                android:enabled="false"
+                android:minHeight="0dp"
+                android:stateListAnimator="@null"
+                android:text="Đã nhận hàng"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
