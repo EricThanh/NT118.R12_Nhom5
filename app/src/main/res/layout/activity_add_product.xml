@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- Header: mũi tên 24dp + gap 12 + tiêu đề 22 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Back"
+            android:scaleType="center"
+            android:src="@drawable/ic_seller_arrow_left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:includeFontPadding="false"
+            android:text="Add product"
+            android:textColor="@color/seller_ink"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="34dp"
+            android:paddingTop="24dp"
+            android:paddingEnd="39dp"
+            android:paddingBottom="24dp">
+
+            <!-- Upload photos: 3 ô 70dp, gap 20 -->
+            <TextView
+                style="@style/SellerFieldLabel"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Upload photos (up to 5)"
+                android:textColor="@color/seller_ink_filter"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/btn_add_photo"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/seller_bg_photo_add"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_seller_camera" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:includeFontPadding="false"
+                        android:text="Add"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/seller_bg_photo" />
+
+                <View
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/seller_bg_photo" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/SellerFieldLabel"
+                android:layout_marginTop="24dp"
+                android:text="Product name" />
+
+            <EditText
+                android:id="@+id/et_product_name"
+                style="@style/SellerInput"
+                android:hint="e.g. IPhone 16"
+                android:inputType="textCapWords" />
+
+            <TextView
+                style="@style/SellerFieldLabel"
+                android:layout_marginTop="31dp"
+                android:text="Category" />
+
+            <EditText
+                android:id="@+id/et_category"
+                style="@style/SellerInput"
+                android:hint="e.g. Manga/Novel"
+                android:inputType="text" />
+
+            <!-- Price + Stock: 2 cột, gap 32 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SellerFieldLabel"
+                        android:text="Price ($)" />
+
+                    <EditText
+                        android:id="@+id/et_price"
+                        style="@style/SellerInput"
+                        android:hint="0.00"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SellerFieldLabel"
+                        android:text="Stock" />
+
+                    <EditText
+                        android:id="@+id/et_stock"
+                        style="@style/SellerInput"
+                        android:hint="0"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/SellerFieldLabel"
+                android:layout_marginTop="31dp"
+                android:text="Available Size" />
+
+            <!-- Size: chip 50dp, gap 28 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/size_38"
+                    style="@style/SellerSizeChip"
+                    android:text="38" />
+
+                <TextView
+                    android:id="@+id/size_39"
+                    style="@style/SellerSizeChip"
+                    android:layout_marginStart="28dp"
+                    android:text="39" />
+
+                <TextView
+                    android:id="@+id/size_40"
+                    style="@style/SellerSizeChip"
+                    android:layout_marginStart="28dp"
+                    android:text="40" />
+
+                <TextView
+                    android:id="@+id/size_41"
+                    style="@style/SellerSizeChip"
+                    android:layout_marginStart="28dp"
+                    android:text="41" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Nút dưới: 130x53dp, cách đáy 40dp -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btn_save_draft"
+            android:layout_width="130dp"
+            android:layout_height="53dp"
+            android:background="@drawable/seller_bg_btn_draft"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Save draft"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/btn_publish"
+            android:layout_width="130dp"
+            android:layout_height="53dp"
+            android:background="@drawable/seller_bg_ink_r10"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Publish"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

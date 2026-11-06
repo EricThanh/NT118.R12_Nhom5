@@ -63,6 +63,20 @@
         <activity
             android:name=".DeliveryAddressActivity"
             android:exported="false" />
+        <!-- Seller (feature/seller) -->
+        <activity
+            android:name=".seller.SellerHomepageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".seller.SellerDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".seller.SellerProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".seller.AddProductActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
