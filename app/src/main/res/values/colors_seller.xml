@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="seller_primary">#1152FD</color>
+    <color name="seller_ink">#3E4958</color>
+    <color name="seller_ink2">#3E4958</color>
+    <color name="seller_ink_filter">#1152FD</color>
+    <color name="seller_gray_text">#6B7280</color>
+    <color name="seller_gray_bg">#F5F7FA</color>
+    <color name="seller_border">#D5DDE0</color>
+    <color name="seller_badge_bg">#EFEFEF</color>
+    <color name="seller_badge_text">#3E4958</color>
+    <color name="seller_hint">#6B7280</color>
+    <color name="seller_chip">#D5DDE0</color>
+    <color name="seller_sub">#6B7280</color>
+    <color name="seller_card_border">#D5DDE0</color>
+    <color name="seller_period_border">#D5DDE0</color>
+    <color name="seller_chart_bar">#3E4958</color>
+    <color name="seller_chart_label">#D5DDE0</color>
+    <color name="seller_delta_bg">#3E4958</color>
+    <color name="seller_thumb">#F5F7FA</color>
+    <color name="seller_banner">#D5DDE0</color>
+    <color name="seller_home_border">#D5DDE0</color>
+    <color name="seller_btn_gray">#6B7280</color>
+</resources>
