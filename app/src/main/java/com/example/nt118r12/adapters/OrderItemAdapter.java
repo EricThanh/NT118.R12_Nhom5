@@ -32,7 +32,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         OrderItem item = items.get(position);
         holder.tvName.setText(item.getProductName());
-        holder.tvSize.setText("Size: " + item.getSize());
+        holder.tvSize.setText("Kích cỡ: " + item.getSize());
         holder.tvPrice.setText(String.format(Locale.US, "$%.2f", item.getPrice()));
         holder.tvQuantity.setText("x" + item.getQuantity());
     }

@@ -19,7 +19,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Back"
+            android:contentDescription="Quay lại"
             android:scaleType="centerInside"
             android:src="@drawable/ic_back"
             app:tint="@color/seller_ink" />
@@ -31,7 +31,7 @@
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Order #1024"
+            android:text="Đơn hàng #1024"
             android:textColor="@color/seller_ink"
             android:textSize="18sp" />
     </LinearLayout>
@@ -69,7 +69,7 @@
                     android:includeFontPadding="false"
                     android:paddingHorizontal="10dp"
                     android:paddingVertical="4dp"
-                    android:text="Waiting for your confirmation"
+                    android:text="Đang chờ xác nhận"
                     android:textColor="@color/seller_ink"
                     android:textSize="11sp" />
 
@@ -80,7 +80,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/montserrat_regular"
                     android:includeFontPadding="false"
-                    android:text="Placed on: Oct 12, 2023, 14:30"
+                    android:text="Đặt lúc: 12/10/2023, 14:30"
                     android:textColor="@color/seller_gray_text"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -97,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Buyer Information"
+                    android:text="Thông tin người mua"
                     android:textColor="@color/seller_ink"
                     android:textSize="14sp" />
 
@@ -151,7 +151,7 @@
                         android:layout_width="38dp"
                         android:layout_height="38dp"
                         android:background="@drawable/seller_bg_search"
-                        android:contentDescription="Chat with Buyer"
+                        android:contentDescription="Nhắn tin cho người mua"
                         android:padding="8dp"
                         android:src="@drawable/ic_chat"
                         app:tint="@color/seller_ink" />
@@ -186,7 +186,7 @@
                         android:fontFamily="@font/montserrat_regular"
                         android:includeFontPadding="false"
                         android:lineSpacingExtra="2dp"
-                        android:text="123 Nguyen Van Linh, Tan Phong Ward, District 7, Ho Chi Minh City"
+                        android:text="123 Nguyễn Văn Linh, phường Tân Phong, Quận 7, TP. Hồ Chí Minh"
                         android:textColor="@color/seller_ink"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -205,7 +205,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Items Ordered (2)"
+                    android:text="Sản phẩm đã đặt (2)"
                     android:textColor="@color/seller_ink"
                     android:textSize="14sp" />
 
@@ -231,7 +231,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Payment Summary"
+                    android:text="Tóm tắt thanh toán"
                     android:textColor="@color/seller_ink"
                     android:textSize="14sp" />
 
@@ -246,7 +246,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/montserrat_regular"
-                        android:text="Payment Method"
+                        android:text="Phương thức thanh toán"
                         android:textColor="@color/seller_gray_text"
                         android:textSize="12sp" />
 
@@ -271,7 +271,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/montserrat_regular"
-                        android:text="Shipping Fee"
+                        android:text="Phí vận chuyển"
                         android:textColor="@color/seller_gray_text"
                         android:textSize="12sp" />
 
@@ -302,7 +302,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/montserrat_bold"
-                        android:text="Total Amount"
+                        android:text="Tổng cộng"
                         android:textColor="@color/seller_ink"
                         android:textSize="14sp" />
 
@@ -338,7 +338,7 @@
             android:fontFamily="@font/montserrat_bold"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="Reject"
+            android:text="Từ chối"
             android:textColor="@color/seller_ink"
             android:textSize="13sp" />
 
@@ -352,7 +352,7 @@
             android:fontFamily="@font/montserrat_bold"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="Confirm order"
+            android:text="Xác nhận đơn"
             android:textColor="@color/white"
             android:textSize="13sp" />
     </LinearLayout>

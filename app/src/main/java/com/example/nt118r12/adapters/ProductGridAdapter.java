@@ -60,7 +60,7 @@ public class ProductGridAdapter extends RecyclerView.Adapter<ProductGridAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = filteredList.get(position);
         holder.tvName.setText(product.getName());
-        holder.tvColors.setText(product.getColorsCount() + " Colors");
+        holder.tvColors.setText(product.getColorsCount() + " màu sắc");
         holder.tvPrice.setText(String.format(Locale.US, "$%.2f", product.getPrice()));
 
         updateFavoriteIcon(holder.ivFavorite, product.isFavorite());

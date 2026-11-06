@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Orders"
+            android:text="Đơn hàng"
             android:textColor="@color/seller_ink"
             android:textSize="22sp" />
     </LinearLayout>
@@ -52,7 +52,7 @@
             android:layout_weight="1"
             android:background="@null"
             android:fontFamily="@font/montserrat_bold"
-            android:hint="Search by Order ID or Buyer"
+            android:hint="Tìm theo mã đơn hoặc người mua"
             android:imeOptions="actionSearch"
             android:includeFontPadding="false"
             android:inputType="text"
@@ -73,12 +73,12 @@
         android:layout_marginEnd="16dp"
         android:background="@color/white"
         app:tabGravity="fill"
-        app:tabIndicatorColor="@color/seller_ink"
+        app:tabIndicatorColor="@color/seller_primary"
         app:tabIndicatorFullWidth="false"
         app:tabIndicatorHeight="2.5dp"
         app:tabMode="fixed"
         app:tabRippleColor="@android:color/transparent"
-        app:tabSelectedTextColor="@color/seller_ink"
+        app:tabSelectedTextColor="@color/seller_primary"
         app:tabTextAppearance="@style/SellerOrderTabTextAppearance"
         app:tabTextColor="@color/seller_gray_text" />
 

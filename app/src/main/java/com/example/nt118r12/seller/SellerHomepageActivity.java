@@ -27,7 +27,7 @@ public class SellerHomepageActivity extends AppCompatActivity {
         findViewById(R.id.btn_home_add_product).setOnClickListener(v ->
                 startActivity(new Intent(this, AddProductActivity.class)));
         findViewById(R.id.btn_home_view_orders).setOnClickListener(v ->
-                Toast.makeText(this, "Màn đơn hàng do thành viên khác phụ trách", Toast.LENGTH_SHORT).show());
+                startActivity(new Intent(this, SellerOrdersActivity.class)));
 
         for (int id : new int[]{R.id.tv_home_stat_1, R.id.tv_home_stat_2, R.id.tv_home_stat_3}) {
             TextView stat = findViewById(id);

@@ -72,6 +72,10 @@ public class SellerOrderAdapter extends RecyclerView.Adapter<SellerOrderAdapter.
             if (listener != null) listener.onOrderClick(order);
         });
 
+        holder.btnViewDetail.setOnClickListener(v -> {
+            if (listener != null) listener.onOrderClick(order);
+        });
+
         holder.btnConfirm.setOnClickListener(v -> {
             if (listener != null) listener.onConfirmClick(order);
         });
@@ -88,7 +92,7 @@ public class SellerOrderAdapter extends RecyclerView.Adapter<SellerOrderAdapter.
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvOrderId, tvOrderDate, tvBuyerName, tvTotalPrice;
-        TextView btnReject, btnConfirm;
+        TextView btnReject, btnConfirm, btnViewDetail;
         View layoutActions;
 
         ViewHolder(@NonNull View itemView) {
@@ -99,6 +103,7 @@ public class SellerOrderAdapter extends RecyclerView.Adapter<SellerOrderAdapter.
             tvTotalPrice = itemView.findViewById(R.id.tv_total_price);
             btnReject = itemView.findViewById(R.id.btn_reject_order);
             btnConfirm = itemView.findViewById(R.id.btn_confirm_order);
+            btnViewDetail = itemView.findViewById(R.id.btn_view_order_detail);
             layoutActions = itemView.findViewById(R.id.layout_order_actions);
         }
     }

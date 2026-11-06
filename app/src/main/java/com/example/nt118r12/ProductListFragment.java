@@ -59,13 +59,13 @@ public class ProductListFragment extends Fragment {
 
             @Override
             public void onFavoriteClick(Product product, int position) {
-                String msg = product.isFavorite() ? "Added to Wishlist" : "Removed from Wishlist";
+                String msg = product.isFavorite() ? "Đã thêm vào yêu thích" : "Đã bỏ khỏi yêu thích";
                 Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAddToCartClick(Product product) {
-                Toast.makeText(requireContext(), "Added " + product.getName() + " to cart", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "Đã thêm " + product.getName() + " vào giỏ hàng", Toast.LENGTH_SHORT).show();
             }
         });
         rvGrid.setAdapter(adapter);
@@ -90,12 +90,12 @@ public class ProductListFragment extends Fragment {
         });
 
         view.findViewById(R.id.layout_sort).setOnClickListener(v ->
-                Toast.makeText(requireContext(), "Sort options dialog", Toast.LENGTH_SHORT).show());
+                Toast.makeText(requireContext(), "Tính năng sắp xếp sẽ sớm có", Toast.LENGTH_SHORT).show());
 
         return view;
     }
 
     private void updateItemsCount() {
-        tvItemsFound.setText(adapter.getFilteredCount() + " items found");
+        tvItemsFound.setText(adapter.getFilteredCount() + " sản phẩm");
     }
 }

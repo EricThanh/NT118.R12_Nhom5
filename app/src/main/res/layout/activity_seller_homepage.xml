@@ -41,7 +41,7 @@
                     android:fontFamily="@font/montserrat_semibold"
                     android:includeFontPadding="false"
                     android:lineSpacingExtra="6dp"
-                    android:text="Welcome back\nLuka’s shop!"
+                    android:text="Chào mừng trở lại\nCửa hàng của Luka!"
                     android:textColor="@color/seller_ink"
                     android:textSize="18sp" />
 
@@ -50,7 +50,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:background="@drawable/seller_bg_bell"
-                    android:contentDescription="Notifications"
+                    android:contentDescription="Thông báo"
                     android:scaleType="center"
                     android:src="@drawable/ic_seller_bell" />
             </LinearLayout>
@@ -75,19 +75,19 @@
                 <TextView
                     android:id="@+id/tv_home_stat_1"
                     style="@style/SellerHomeStat"
-                    android:text="5\nNew Orders" />
+                    android:text="5\nĐơn mới" />
 
                 <TextView
                     android:id="@+id/tv_home_stat_2"
                     style="@style/SellerHomeStat"
                     android:layout_marginStart="16dp"
-                    android:text="5\nNew Products" />
+                    android:text="5\nSản phẩm mới" />
 
                 <TextView
                     android:id="@+id/tv_home_stat_3"
                     style="@style/SellerHomeStat"
                     android:layout_marginStart="16dp"
-                    android:text="5\nNew Orders" />
+                    android:text="5\nĐơn mới" />
             </LinearLayout>
 
             <!-- 2 nút 137x41, gap 40 -->
@@ -106,7 +106,7 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:gravity="center"
                     android:includeFontPadding="false"
-                    android:text="Add Product"
+                    android:text="Thêm sản phẩm"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
@@ -119,8 +119,8 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:gravity="center"
                     android:includeFontPadding="false"
-                    android:text="View Orders"
-                    android:textColor="@color/black"
+                    android:text="Xem đơn hàng"
+                    android:textColor="@color/seller_ink"
                     android:textSize="12sp" />
             </LinearLayout>
 

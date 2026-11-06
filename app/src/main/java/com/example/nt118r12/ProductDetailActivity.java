@@ -29,7 +29,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     private Product product;
     private int quantity = 1;
     private boolean isDescriptionExpanded = false;
-    private String selectedColorName = "White / Blue";
+    private String selectedColorName = "Trắng / Xanh dương";
     private String selectedSize = "41";
 
     private TextView tvProductName, tvProductPrice, tvSelectedColor, tvDescription, tvReadMore, tvQuantity, btnAddToCart;
@@ -76,14 +76,14 @@ public class ProductDetailActivity extends AppCompatActivity {
         btnFavorite.setOnClickListener(v -> {
             product.setFavorite(!product.isFavorite());
             updateFavoriteIcon(product.isFavorite());
-            Toast.makeText(this, product.isFavorite() ? "Added to Wishlist" : "Removed from Wishlist", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, product.isFavorite() ? "Đã thêm vào yêu thích" : "Đã bỏ khỏi yêu thích", Toast.LENGTH_SHORT).show();
         });
 
         findViewById(R.id.tv_size_guide).setOnClickListener(v ->
-                Toast.makeText(this, "Standard EU shoe sizing chart", Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, "Bảng quy đổi kích cỡ giày EU", Toast.LENGTH_SHORT).show());
 
         findViewById(R.id.tv_see_all_reviews).setOnClickListener(v ->
-                Toast.makeText(this, "Opening full reviews list", Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, "Đang mở danh sách đánh giá", Toast.LENGTH_SHORT).show());
     }
 
     private void updateFavoriteIcon(boolean isFav) {
@@ -140,15 +140,15 @@ public class ProductDetailActivity extends AppCompatActivity {
         rvColors.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         List<ColorItem> colors = Arrays.asList(
-                new ColorItem("White / Blue", Color.parseColor("#EBF3FC")),
-                new ColorItem("Obsidian Black", Color.parseColor("#1F1F1F")),
-                new ColorItem("Crimson Red", Color.parseColor("#E53935")),
-                new ColorItem("Neutral Olive", Color.parseColor("#708238"))
+                new ColorItem("Trắng / Xanh dương", Color.parseColor("#EBF3FC")),
+                new ColorItem("Đen Obsidian", Color.parseColor("#1F1F1F")),
+                new ColorItem("Đỏ Crimson", Color.parseColor("#E53935")),
+                new ColorItem("Xanh ô liu", Color.parseColor("#708238"))
         );
 
         final int[] selectedIndex = {0};
         selectedColorName = colors.get(0).name;
-        tvSelectedColor.setText("Color: " + selectedColorName);
+        tvSelectedColor.setText("Màu: " + selectedColorName);
 
         rvColors.setAdapter(new RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             @NonNull
@@ -177,7 +177,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                     int prev = selectedIndex[0];
                     selectedIndex[0] = holder.getAdapterPosition();
                     selectedColorName = item.name;
-                    tvSelectedColor.setText("Color: " + selectedColorName);
+                    tvSelectedColor.setText("Màu: " + selectedColorName);
                     notifyItemChanged(prev);
                     notifyItemChanged(selectedIndex[0]);
                 });
@@ -236,7 +236,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         tvReadMore.setOnClickListener(v -> {
             isDescriptionExpanded = !isDescriptionExpanded;
             tvDescription.setMaxLines(isDescriptionExpanded ? Integer.MAX_VALUE : 3);
-            tvReadMore.setText(isDescriptionExpanded ? "Show less" : "Read more");
+            tvReadMore.setText(isDescriptionExpanded ? "Thu gọn" : "Xem thêm");
         });
     }
 
@@ -258,14 +258,14 @@ public class ProductDetailActivity extends AppCompatActivity {
         });
 
         btnAddToCart.setOnClickListener(v -> {
-            String summary = "Added " + quantity + "x " + product.getName()
-                    + " (" + selectedColorName + ", Size " + selectedSize + ") to cart!";
+            String summary = "Đã thêm " + quantity + " x " + product.getName()
+                    + " (" + selectedColorName + ", cỡ " + selectedSize + ") vào giỏ hàng";
             Toast.makeText(this, summary, Toast.LENGTH_LONG).show();
         });
     }
 
     private void updateBottomBarPrice() {
         double total = product.getPrice() * quantity;
-        btnAddToCart.setText(String.format(Locale.US, "Add to cart - $%.2f", total));
+        btnAddToCart.setText(String.format(Locale.US, "Thêm vào giỏ - $%.2f", total));
     }
 }

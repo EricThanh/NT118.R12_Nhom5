@@ -29,7 +29,7 @@
             android:layout_gravity="top|end"
             android:layout_margin="8dp"
             android:background="@drawable/seller_bg_badge"
-            android:contentDescription="Favorite"
+            android:contentDescription="Yêu thích"
             android:padding="6dp"
             android:src="@drawable/ic_heart"
             app:tint="@color/seller_ink" />
@@ -60,7 +60,7 @@
             android:layout_marginTop="3dp"
             android:fontFamily="@font/montserrat_regular"
             android:includeFontPadding="false"
-            android:text="5 Colors"
+            android:text="5 màu sắc"
             android:textColor="@color/seller_gray_text"
             android:textSize="11sp" />
 

@@ -24,10 +24,10 @@ public class SellerOrdersActivity extends AppCompatActivity {
     private TabLayout tabLayout;
 
     private final String[] tabLabels = new String[]{
-            "New (3)",
-            "To ship (2)",
-            "Shipping",
-            "Complete"
+            "Mới (3)",
+            "Chờ giao (2)",
+            "Đang giao",
+            "Hoàn thành"
     };
 
     private final String[] tabStatuses = new String[]{
@@ -48,12 +48,12 @@ public class SellerOrdersActivity extends AppCompatActivity {
         SellerNavHelper.setup(this, R.id.nav_wishlist);
 
         List<SellerOrder> orders = new ArrayList<>();
-        orders.add(new SellerOrder("#1024", "12 Oct 2023, 14:30", "Alex Johnson", 282.00, SellerOrder.STATUS_NEW));
-        orders.add(new SellerOrder("#1025", "12 Oct 2023, 11:15", "Sophia Miller", 112.50, SellerOrder.STATUS_NEW));
-        orders.add(new SellerOrder("#1021", "11 Oct 2023, 16:45", "David Brown", 170.00, SellerOrder.STATUS_TO_SHIP));
-        orders.add(new SellerOrder("#1019", "10 Oct 2023, 09:20", "Emma Wilson", 340.00, SellerOrder.STATUS_SHIPPING));
-        orders.add(new SellerOrder("#1015", "08 Oct 2023, 13:00", "Michael Clark", 120.00, SellerOrder.STATUS_COMPLETE));
-        orders.add(new SellerOrder("#1012", "06 Oct 2023, 18:10", "Olivia Davis", 160.00, SellerOrder.STATUS_COMPLETE));
+        orders.add(new SellerOrder("#1024", "12/10/2023, 14:30", "Alex Johnson", 282.00, SellerOrder.STATUS_NEW));
+        orders.add(new SellerOrder("#1025", "12/10/2023, 11:15", "Sophia Miller", 112.50, SellerOrder.STATUS_NEW));
+        orders.add(new SellerOrder("#1021", "11/10/2023, 16:45", "David Brown", 170.00, SellerOrder.STATUS_TO_SHIP));
+        orders.add(new SellerOrder("#1019", "10/10/2023, 09:20", "Emma Wilson", 340.00, SellerOrder.STATUS_SHIPPING));
+        orders.add(new SellerOrder("#1015", "08/10/2023, 13:00", "Michael Clark", 120.00, SellerOrder.STATUS_COMPLETE));
+        orders.add(new SellerOrder("#1012", "06/10/2023, 18:10", "Olivia Davis", 160.00, SellerOrder.STATUS_COMPLETE));
 
         adapter = new SellerOrderAdapter(orders, new SellerOrderAdapter.OnOrderActionListener() {
             @Override
@@ -65,14 +65,15 @@ public class SellerOrdersActivity extends AppCompatActivity {
                 } else if (SellerOrder.STATUS_SHIPPING.equals(order.getStatus())) {
                     order.setStatus(SellerOrder.STATUS_COMPLETE);
                 }
-                Toast.makeText(SellerOrdersActivity.this, "Order " + order.getOrderId() + " updated to " + order.getStatus(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SellerOrdersActivity.this, "Đơn " + order.getOrderId()
+                        + " đã chuyển sang " + getStatusLabel(order.getStatus()), Toast.LENGTH_SHORT).show();
                 applyFilter();
             }
 
             @Override
             public void onRejectClick(SellerOrder order) {
                 orders.remove(order);
-                Toast.makeText(SellerOrdersActivity.this, "Order " + order.getOrderId() + " rejected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SellerOrdersActivity.this, "Đã từ chối đơn " + order.getOrderId(), Toast.LENGTH_SHORT).show();
                 applyFilter();
             }
 
@@ -125,5 +126,12 @@ public class SellerOrdersActivity extends AppCompatActivity {
 
     private void applyFilter() {
         adapter.filter(currentStatus, etSearch.getText().toString());
+    }
+
+    private String getStatusLabel(String status) {
+        if (SellerOrder.STATUS_TO_SHIP.equals(status)) return "chờ giao hàng";
+        if (SellerOrder.STATUS_SHIPPING.equals(status)) return "đang giao hàng";
+        if (SellerOrder.STATUS_COMPLETE.equals(status)) return "hoàn thành";
+        return "chờ xác nhận";
     }
 }

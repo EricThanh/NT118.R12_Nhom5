@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="14dp"
@@ -30,7 +31,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_regular"
             android:includeFontPadding="false"
-            android:text="12 Oct 2023, 14:30"
+            android:text="12/10/2023, 14:30"
             android:textColor="@color/seller_gray_text"
             android:textSize="11sp" />
     </LinearLayout>
@@ -79,6 +80,20 @@
             android:textSize="14sp" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/btn_view_order_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/montserrat_semibold"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="4dp"
+        android:text="Xem chi tiết ›"
+        android:textColor="@color/seller_primary"
+        android:textSize="12sp" />
+
     <LinearLayout
         android:id="@+id/layout_order_actions"
         android:layout_width="match_parent"
@@ -97,7 +112,7 @@
             android:fontFamily="@font/montserrat_bold"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="Reject"
+            android:text="Từ chối"
             android:textColor="@color/seller_ink"
             android:textSize="12sp" />
 
@@ -111,7 +126,7 @@
             android:fontFamily="@font/montserrat_bold"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="Confirm"
+            android:text="Xác nhận"
             android:textColor="@color/white"
             android:textSize="12sp" />
     </LinearLayout>
