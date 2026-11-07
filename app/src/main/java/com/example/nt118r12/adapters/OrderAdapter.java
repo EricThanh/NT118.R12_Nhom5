@@ -1,5 +1,7 @@
+
 package com.example.nt118r12.adapters;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,14 +39,21 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
     @NonNull
     @Override
-    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public OrderViewHolder onCreateViewHolder(
+            @NonNull ViewGroup parent,
+            int viewType
+    ) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_customer_order, parent, false);
+
         return new OrderViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
+    public void onBindViewHolder(
+            @NonNull OrderViewHolder holder,
+            int position
+    ) {
         Order order = orders.get(position);
 
         holder.tvOrderId.setText("Đơn #" + order.getId());
@@ -54,62 +63,80 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.tvProductPrice.setText(formatPrice(order.getProductPrice()));
         holder.tvTotal.setText(formatPrice(order.getTotal()));
 
+
         if (order.getItemCount() > 1) {
             holder.tvMoreItems.setVisibility(View.VISIBLE);
-            holder.tvMoreItems.setText("+" + (order.getItemCount() - 1) + " sản phẩm khác");
+            holder.tvMoreItems.setText(
+                    "+" + (order.getItemCount() - 1) + " sản phẩm khác"
+            );
         } else {
             holder.tvMoreItems.setVisibility(View.GONE);
         }
 
-        int statusBg;
-        int statusColor;
         String statusText;
         String actionText;
         boolean primaryAction;
 
+
         switch (order.getStatus()) {
             case Order.STATUS_SHIPPING:
-                statusBg = R.drawable.bg_status_shipping;
-                statusColor = R.color.primary;
                 statusText = "Đang giao";
                 actionText = "Xem chi tiết";
                 primaryAction = false;
                 break;
+
             case Order.STATUS_DELIVERED:
-                statusBg = R.drawable.bg_status_delivered;
-                statusColor = R.color.success;
                 statusText = "Đã giao";
                 actionText = "Mua lại";
                 primaryAction = true;
                 break;
+
             case Order.STATUS_CANCELLED:
-                statusBg = R.drawable.bg_status_cancelled;
-                statusColor = R.color.error;
                 statusText = "Đã huỷ";
                 actionText = "Xem chi tiết";
                 primaryAction = false;
                 break;
+
             case Order.STATUS_PENDING:
             default:
-                statusBg = R.drawable.bg_status_pending;
-                statusColor = R.color.warning;
                 statusText = "Chờ xác nhận";
                 actionText = "Xem chi tiết";
                 primaryAction = false;
                 break;
         }
 
-        holder.tvStatus.setBackgroundResource(statusBg);
-        holder.tvStatus.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), statusColor));
+
+        holder.tvStatus.setBackground(null);
         holder.tvStatus.setText(statusText);
+        holder.tvStatus.setTextColor(Color.parseColor("#EF5538"));
+        holder.tvStatus.setPadding(0, 0, 0, 0);
+        holder.tvStatus.setElevation(0f);
 
         holder.btnAction.setText(actionText);
+        holder.btnAction.setStateListAnimator(null);
+
         if (primaryAction) {
-            holder.btnAction.setBackgroundResource(R.drawable.bg_btn_primary);
-            holder.btnAction.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.white));
+            holder.btnAction.setBackgroundResource(
+                    R.drawable.bg_btn_primary
+            );
+
+            holder.btnAction.setTextColor(
+                    ContextCompat.getColor(
+                            holder.itemView.getContext(),
+                            R.color.white
+                    )
+            );
         } else {
-            holder.btnAction.setBackgroundResource(R.drawable.bg_btn_outline_primary);
-            holder.btnAction.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.primary));
+            holder.btnAction.setBackgroundResource(
+                    R.drawable.bg_btn_outline_primary
+            );
+
+            holder.btnAction.setTextColor(
+                    ContextCompat.getColor(
+                            holder.itemView.getContext(),
+                            R.color.primary
+                    )
+            );
         }
 
         holder.btnAction.setOnClickListener(v -> {
@@ -129,12 +156,21 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     }
 
     static class OrderViewHolder extends RecyclerView.ViewHolder {
-        TextView tvOrderId, tvOrderDate, tvStatus, tvProductName, tvProductMeta,
-                tvProductPrice, tvMoreItems, tvTotal;
+
+        TextView tvOrderId;
+        TextView tvOrderDate;
+        TextView tvStatus;
+        TextView tvProductName;
+        TextView tvProductMeta;
+        TextView tvProductPrice;
+        TextView tvMoreItems;
+        TextView tvTotal;
+
         AppCompatButton btnAction;
 
         OrderViewHolder(@NonNull View itemView) {
             super(itemView);
+
             tvOrderId = itemView.findViewById(R.id.tvOrderId);
             tvOrderDate = itemView.findViewById(R.id.tvOrderDate);
             tvStatus = itemView.findViewById(R.id.tvStatus);

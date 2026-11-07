@@ -14,44 +14,46 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_home_header"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <EditText
                 android:id="@+id/et_search"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="52dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="12dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginEnd="12dp"
                 android:layout_marginBottom="64dp"
                 android:background="@drawable/bg_search"
                 android:drawableStart="@drawable/ic_search"
                 android:drawablePadding="8dp"
                 android:hint="Tìm kiếm sản phẩm..."
+                android:inputType="text"
+                android:maxLines="1"
                 android:paddingHorizontal="16dp"
                 android:textColor="@color/text_primary"
                 android:textColorHint="@color/text_secondary"
-                android:textSize="14sp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_filter"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/iv_filter" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/iv_filter"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/bg_filter_button"
-                android:padding="12dp"
-                android:src="@drawable/ic_filter"
                 android:contentDescription="Lọc và sắp xếp"
-                app:tint="@color/primary"
-                app:layout_constraintTop_toTopOf="@id/et_search"
+                android:padding="14dp"
+                android:src="@drawable/ic_filter"
                 app:layout_constraintBottom_toBottomOf="@id/et_search"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/et_search"
+                app:tint="@color/primary" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -64,9 +66,9 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="0dp"
             app:cardUseCompatPadding="false"
-            app:layout_constraintTop_toBottomOf="@id/header_container"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/header_container">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -82,58 +84,62 @@
                     android:id="@+id/iv_banner"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_constraintWidth_percent="0.45"
-                    app:layout_constraintDimensionRatio="1:1"
                     android:scaleType="centerCrop"
                     android:src="@drawable/placeholder_shoe"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.45" />
 
                 <TextView
                     android:id="@+id/tv_banner_subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:layout_marginStart="16dp"
-                    android:text="Popular"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iv_banner" />
+                    android:layout_marginTop="16dp"
+                    android:text="Bán chạy"
+                    android:textColor="@color/text_muted"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_banner"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_banner_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="16dp"
                     android:text="Air Max 2090"
                     android:textColor="@color/text_primary"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    app:layout_constraintTop_toBottomOf="@id/tv_banner_subtitle"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/iv_banner"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_banner_subtitle" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_buy_now"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_height="38dp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
-                    android:paddingHorizontal="16dp"
                     android:background="@drawable/bg_btn_small_dark"
+                    android:elevation="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingHorizontal="18dp"
                     android:stateListAnimator="@null"
                     android:text="Mua ngay"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="12sp"
-                    app:layout_constraintTop_toBottomOf="@id/tv_banner_title"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iv_banner" />
+                    app:layout_constraintStart_toEndOf="@id/iv_banner"
+                    app:layout_constraintTop_toBottomOf="@id/tv_banner_title" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -144,13 +150,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/cv_banner"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/cv_banner">
 
-            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_margin="4dp" android:background="@drawable/bg_btn_primary" />
-            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_margin="4dp" android:background="@drawable/bg_btn_disabled" />
-            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_margin="4dp" android:background="@drawable/bg_btn_disabled" />
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_btn_primary" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_btn_disabled" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_btn_disabled" />
         </LinearLayout>
 
         <LinearLayout
@@ -159,12 +179,12 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="24dp"
+            android:baselineAligned="false"
             android:orientation="horizontal"
             android:weightSum="4"
-            android:baselineAligned="false"
-            app:layout_constraintTop_toBottomOf="@id/ll_dots"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/ll_dots">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -172,24 +192,29 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <FrameLayout
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:background="@drawable/bg_category_icon">
+
                     <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_user"
+                        android:src="@drawable/ic_male"
                         app:tint="@color/primary" />
                 </FrameLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:maxLines="1"
                     android:text="Nam"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -198,24 +223,29 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <FrameLayout
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:background="@drawable/bg_category_icon">
+
                     <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_heart"
+                        android:src="@drawable/ic_female"
                         app:tint="@color/primary" />
                 </FrameLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:maxLines="1"
                     android:text="Nữ"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -224,24 +254,29 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <FrameLayout
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:background="@drawable/bg_category_icon">
+
                     <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_user"
+                        android:src="@drawable/ic_child"
                         app:tint="@color/primary" />
                 </FrameLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:maxLines="1"
                     android:text="Trẻ em"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -250,24 +285,29 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <FrameLayout
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:background="@drawable/bg_category_icon">
+
                     <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_bag"
+                        android:src="@drawable/ic_discount"
                         app:tint="@color/primary" />
                 </FrameLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:maxLines="1"
                     android:text="Giảm giá"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
@@ -279,42 +319,46 @@
             android:layout_marginTop="32dp"
             android:text="Sản phẩm mới"
             android:textColor="@color/text_primary"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/ll_categories"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_categories" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_see_all"
             android:layout_width="wrap_content"
-            android:layout_height="32dp"
+            android:layout_height="38dp"
             android:layout_marginEnd="24dp"
-            android:paddingHorizontal="12dp"
             android:background="@drawable/bg_btn_small_primary"
+            android:elevation="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingHorizontal="16dp"
             android:stateListAnimator="@null"
             android:text="Tất cả"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            app:layout_constraintTop_toTopOf="@id/tv_new_products"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/tv_new_products"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_new_products" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_new_products"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
             android:clipToPadding="false"
+            android:orientation="horizontal"
             android:paddingStart="24dp"
             android:paddingEnd="32dp"
-            android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/tv_new_products"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="32dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_new_products" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

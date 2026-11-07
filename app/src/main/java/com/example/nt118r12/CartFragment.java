@@ -12,6 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,12 +37,21 @@ public class CartFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
 
+        final int rootPadTop = view.getPaddingTop();
+        ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
+            Insets bars = windowInsets.getInsets(
+                    WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+            v.setPadding(v.getPaddingLeft(), rootPadTop + bars.top,
+                    v.getPaddingRight(), v.getPaddingBottom());
+            return windowInsets;
+        });
+        ViewCompat.requestApplyInsets(view);
+
         EditText etVoucher = view.findViewById(R.id.et_voucher);
         AppCompatButton btnApplyVoucher = view.findViewById(R.id.btn_apply_voucher);
         AppCompatButton btnCheckout = view.findViewById(R.id.btn_checkout);
         tvTotalAmount = view.findViewById(R.id.tv_total_amount);
         RecyclerView rvCart = view.findViewById(R.id.rv_cart);
-
 
         cartItemList = new ArrayList<>();
         cartItemList.add(new CartItem(new Product("Nike React Miler", 170.0, false), 1));
@@ -71,7 +83,6 @@ public class CartFragment extends Fragment {
         });
 
         btnCheckout.setOnClickListener(v -> {
-
         });
 
         return view;
