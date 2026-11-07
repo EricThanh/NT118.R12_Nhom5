@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:background="@drawable/seller_bg_card"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@drawable/seller_bg_thumb">
+
+        <ImageView
+            android:id="@+id/iv_product_thumb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:padding="12dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/placeholder_shoe" />
+
+        <ImageView
+            android:id="@+id/iv_favorite"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="8dp"
+            android:background="@drawable/seller_bg_badge"
+            android:contentDescription="Yêu thích"
+            android:padding="6dp"
+            android:src="@drawable/ic_heart"
+            app:tint="@color/seller_ink" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat_bold"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="Nike Air Max 270"
+            android:textColor="@color/seller_ink"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_product_colors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:includeFontPadding="false"
+            android:text="5 màu sắc"
+            android:textColor="@color/seller_gray_text"
+            android:textSize="11sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_bold"
+                android:includeFontPadding="false"
+                android:text="$160.00"
+                android:textColor="@color/seller_ink"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/btn_quick_add"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/seller_bg_ink_r8"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
