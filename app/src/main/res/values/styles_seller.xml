@@ -5,7 +5,7 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="textAllCaps">false</item>
     </style>
-    <!-- Tab lọc ở màn SellerProduct: cao 31dp, cách nhau 8dp -->
+
     <style name="SellerTab">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">31dp</item>
@@ -16,7 +16,7 @@
         <item name="android:textSize">13sp</item>
     </style>
 
-    <!-- Nhãn của form AddProduct -->
+
     <style name="SellerFieldLabel">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -26,7 +26,7 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-    <!-- Ô nhập của form AddProduct: cao 44dp, bo 8dp -->
+
     <style name="SellerInput">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">44dp</item>
@@ -41,7 +41,7 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-    <!-- Dashboard: nhãn ngày dưới biểu đồ -->
+
     <style name="SellerDayLabel">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -53,7 +53,7 @@
         <item name="android:textSize">10sp</item>
     </style>
 
-    <!-- Dashboard: thẻ thống kê, padding 14dp, bo 14dp -->
+
     <style name="SellerStatCard">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -82,7 +82,7 @@
         <item name="android:textSize">22sp</item>
     </style>
 
-    <!-- Dashboard: dòng Best sellers -->
+
     <style name="SellerBestRow">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -134,35 +134,39 @@
         <item name="android:textSize">13sp</item>
     </style>
 
-    <!-- Homepage: thẻ thống kê 100x60, viền đen -->
+
     <style name="SellerHomeStat">
-        <item name="android:layout_width">100dp</item>
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minHeight">76dp</item>
         <item name="android:background">@drawable/seller_bg_home_stat</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:paddingStart">8dp</item>
-        <item name="android:paddingEnd">2dp</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@color/seller_ink</item>
+        <item name="android:textSize">13sp</item>
     </style>
 
-    <!-- Homepage: thẻ sản phẩm 303x114, ảnh 92.6x102 -->
     <style name="SellerHomeCard">
-        <item name="android:layout_width">303dp</item>
-        <item name="android:layout_height">114dp</item>
-        <item name="android:layout_marginStart">33dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
         <item name="android:background">@drawable/seller_bg_home_card</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
-        <item name="android:paddingStart">6dp</item>
-        <item name="android:paddingEnd">12dp</item>
+        <item name="android:padding">10dp</item>
     </style>
 
     <style name="SellerHomeThumb">
-        <item name="android:layout_width">92.6dp</item>
-        <item name="android:layout_height">102dp</item>
+        <item name="android:layout_width">88dp</item>
+        <item name="android:layout_height">88dp</item>
         <item name="android:background">@drawable/seller_bg_home_thumb</item>
     </style>
 
@@ -172,7 +176,7 @@
         <item name="android:fontFamily">@font/montserrat_semibold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_ink</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="SellerHomePrice">
@@ -182,7 +186,7 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_ink</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="SellerHomeQtyRow">
@@ -215,7 +219,7 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <!-- Nút chọn size: 50x50dp -->
+
     <style name="SellerSizeChip">
         <item name="android:layout_width">50dp</item>
         <item name="android:layout_height">50dp</item>

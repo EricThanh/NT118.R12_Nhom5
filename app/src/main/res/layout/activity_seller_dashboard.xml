@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <!-- Header: "Dashboard" + chọn khoảng thời gian (36dp) -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
             android:paddingEnd="24dp"
             android:paddingBottom="16dp">
 
-            <!-- Revenue card -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
                         android:textSize="11sp" />
                 </LinearLayout>
 
-                <!-- Biểu đồ cột: cao 90dp, gap 10 -->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
@@ -177,7 +177,7 @@
                         android:background="@drawable/seller_bg_bar" />
                 </LinearLayout>
 
-                <!-- Nhãn ngày -->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Thống kê 2x2, gap 12 -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -289,7 +289,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Best sellers -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

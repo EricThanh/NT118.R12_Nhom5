@@ -16,60 +16,92 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="16dp">
+            android:paddingBottom="24dp">
 
-            <!-- Header: avatar 53dp, lời chào, chuông 60dp -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="31dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="36dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <View
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:background="@drawable/seller_bg_home_avatar" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="19dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="12dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_semibold"
                     android:includeFontPadding="false"
                     android:lineSpacingExtra="6dp"
-                    android:text="Chào mừng trở lại\nCửa hàng của Luka!"
+                    android:text=""
                     android:textColor="@color/seller_ink"
-                    android:textSize="18sp" />
+                    android:textSize="19sp" />
 
                 <ImageView
                     android:id="@+id/btn_notification"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
                     android:background="@drawable/seller_bg_bell"
                     android:contentDescription="Thông báo"
                     android:scaleType="center"
                     android:src="@drawable/ic_seller_bell" />
             </LinearLayout>
 
-            <!-- Banner 326x131 -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="131dp"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="23dp"
-                android:background="@drawable/seller_bg_banner" />
-
-            <!-- 3 thẻ thống kê 100x60, gap 16 -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="26dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/seller_bg_banner"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:includeFontPadding="false"
+                    android:text="Doanh thu hôm nay"
+                    android:textColor="@color/seller_sub"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:includeFontPadding="false"
+                    android:text="$840.00"
+                    android:textColor="@color/seller_ink"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:includeFontPadding="false"
+                    android:text=""
+                    android:textColor="@color/seller_ink"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <TextView
@@ -80,54 +112,67 @@
                 <TextView
                     android:id="@+id/tv_home_stat_2"
                     style="@style/SellerHomeStat"
-                    android:layout_marginStart="16dp"
-                    android:text="5\nSản phẩm mới" />
+                    android:layout_marginStart="12dp"
+                    android:text="2\nCần giao" />
 
                 <TextView
                     android:id="@+id/tv_home_stat_3"
                     style="@style/SellerHomeStat"
-                    android:layout_marginStart="16dp"
-                    android:text="5\nĐơn mới" />
+                    android:layout_marginStart="12dp"
+                    android:text="1\nHết hàng" />
             </LinearLayout>
 
-            <!-- 2 nút 137x41, gap 40 -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="31dp"
-                android:layout_marginTop="29dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/btn_home_add_product"
-                    android:layout_width="137dp"
-                    android:layout_height="41dp"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
                     android:background="@drawable/seller_bg_home_add"
                     android:fontFamily="@font/montserrat_bold"
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:text="Thêm sản phẩm"
                     android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/btn_home_view_orders"
-                    android:layout_width="137dp"
-                    android:layout_height="41dp"
-                    android:layout_marginStart="40dp"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
                     android:background="@drawable/seller_bg_home_view"
                     android:fontFamily="@font/montserrat_bold"
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:text="Xem đơn hàng"
                     android:textColor="@color/seller_ink"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Thẻ sản phẩm 303x114 -->
-            <LinearLayout
-                style="@style/SellerHomeCard"
-                android:layout_marginTop="23dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:includeFontPadding="false"
+                android:text="Sản phẩm bán chạy"
+                android:textColor="@color/seller_ink"
+                android:textSize="18sp" />
+
+            <LinearLayout style="@style/SellerHomeCard">
 
                 <View style="@style/SellerHomeThumb" />
 
@@ -146,29 +191,21 @@
                         style="@style/SellerHomePrice"
                         android:text="$170.00" />
 
-                    <LinearLayout style="@style/SellerHomeQtyRow">
-
-                        <TextView
-                            android:id="@+id/btn_qty_minus_1"
-                            style="@style/SellerHomeQtyButton"
-                            android:text="-" />
-
-                        <TextView
-                            android:id="@+id/tv_qty_1"
-                            style="@style/SellerHomeQtyBox"
-                            android:text="1" />
-
-                        <TextView
-                            android:id="@+id/btn_qty_plus_1"
-                            style="@style/SellerHomeQtyButton"
-                            android:text="+" />
-                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:includeFontPadding="false"
+                        android:text="Đã bán 11 · Còn 24 đôi"
+                        android:textColor="@color/seller_sub"
+                        android:textSize="13sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 style="@style/SellerHomeCard"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="12dp">
 
                 <View style="@style/SellerHomeThumb" />
 
@@ -187,23 +224,15 @@
                         style="@style/SellerHomePrice"
                         android:text="$112.00" />
 
-                    <LinearLayout style="@style/SellerHomeQtyRow">
-
-                        <TextView
-                            android:id="@+id/btn_qty_minus_2"
-                            style="@style/SellerHomeQtyButton"
-                            android:text="-" />
-
-                        <TextView
-                            android:id="@+id/tv_qty_2"
-                            style="@style/SellerHomeQtyBox"
-                            android:text="1" />
-
-                        <TextView
-                            android:id="@+id/btn_qty_plus_2"
-                            style="@style/SellerHomeQtyButton"
-                            android:text="+" />
-                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:includeFontPadding="false"
+                        android:text="Đã bán 6 · Còn 1 đôi"
+                        android:textColor="@color/seller_sub"
+                        android:textSize="13sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
