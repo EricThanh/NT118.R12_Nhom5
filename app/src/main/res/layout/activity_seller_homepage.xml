@@ -71,7 +71,7 @@
                     android:fontFamily="@font/montserrat_medium"
                     android:includeFontPadding="false"
                     android:text="Doanh thu hôm nay"
-                    android:textColor="@color/seller_sub"
+                    android:textColor="@color/seller_chart_label"
                     android:textSize="14sp" />
 
                 <TextView
@@ -81,7 +81,7 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:includeFontPadding="false"
                     android:text="$840.00"
-                    android:textColor="@color/seller_ink"
+                    android:textColor="@color/white"
                     android:textSize="30sp" />
 
                 <TextView
@@ -91,7 +91,7 @@
                     android:fontFamily="@font/montserrat_semibold"
                     android:includeFontPadding="false"
                     android:text=""
-                    android:textColor="@color/seller_ink"
+                    android:textColor="@color/white"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -156,7 +156,7 @@
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:text="Xem đơn hàng"
-                    android:textColor="@color/seller_ink"
+                    android:textColor="@color/seller_primary"
                     android:textSize="14sp" />
             </LinearLayout>
 

@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="seller_background">#FFFFFF</color>
     <color name="seller_primary">#1152FD</color>
-    <color name="seller_ink">#3E4958</color>
-    <color name="seller_ink2">#3E4958</color>
-    <color name="seller_ink_filter">#1152FD</color>
-    <color name="seller_gray_text">#6B7280</color>
-    <color name="seller_gray_bg">#F5F7FA</color>
-    <color name="seller_border">#D5DDE0</color>
-    <color name="seller_badge_bg">#EFEFEF</color>
-    <color name="seller_badge_text">#3E4958</color>
-    <color name="seller_hint">#6B7280</color>
-    <color name="seller_chip">#D5DDE0</color>
-    <color name="seller_sub">#6B7280</color>
-    <color name="seller_card_border">#D5DDE0</color>
-    <color name="seller_period_border">#D5DDE0</color>
-    <color name="seller_chart_bar">#3E4958</color>
-    <color name="seller_chart_label">#D5DDE0</color>
-    <color name="seller_delta_bg">#3E4958</color>
-    <color name="seller_thumb">#F5F7FA</color>
-    <color name="seller_banner">#D5DDE0</color>
-    <color name="seller_home_border">#D5DDE0</color>
-    <color name="seller_btn_gray">#6B7280</color>
+    <color name="seller_surface">#FFFFFF</color>
+    <color name="seller_text_primary">#3E4958</color>
+    <color name="seller_text_secondary">#D5DDE0</color>
+    <color name="seller_text_muted">#97ADB6</color>
+    <color name="seller_divider">#D5DDE0</color>
+
+    <color name="seller_ink">@color/seller_text_primary</color>
+    <color name="seller_ink2">@color/seller_text_primary</color>
+    <color name="seller_ink_filter">@color/seller_text_primary</color>
+    <color name="seller_gray_text">@color/seller_text_muted</color>
+    <color name="seller_hint">@color/seller_text_secondary</color>
+    <color name="seller_sub">@color/seller_text_muted</color>
+    <color name="seller_badge_text">@color/seller_primary</color>
+    <color name="seller_gray_bg">@color/seller_surface</color>
+    <color name="seller_chip">@color/seller_surface</color>
+    <color name="seller_badge_bg">@color/seller_surface</color>
+    <color name="seller_thumb">@color/seller_surface</color>
+    <color name="seller_btn_gray">@color/seller_surface</color>
+    <color name="seller_border">@color/seller_divider</color>
+    <color name="seller_card_border">@color/seller_divider</color>
+    <color name="seller_period_border">@color/seller_divider</color>
+    <color name="seller_home_border">@color/seller_divider</color>
+    <color name="seller_banner">@color/seller_primary</color>
+
+    <color name="seller_chart_bar">#80FFFFFF</color>
+    <color name="seller_chart_label">#CCFFFFFF</color>
+    <color name="seller_delta_bg">#33FFFFFF</color>
 </resources>

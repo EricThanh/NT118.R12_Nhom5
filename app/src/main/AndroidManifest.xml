@@ -63,7 +63,6 @@
         <activity
             android:name=".DeliveryAddressActivity"
             android:exported="false" />
-        <!-- Seller (feature/seller) -->
         <activity
             android:name=".seller.SellerHomepageActivity"
             android:exported="false" />

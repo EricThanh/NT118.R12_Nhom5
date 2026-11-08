@@ -33,7 +33,6 @@ public class SellerProductAdapter extends RecyclerView.Adapter<SellerProductAdap
         filter(null, "");
     }
 
-    // status == null nghĩa là hiện tất cả trạng thái
     public void filter(String status, String query) {
         String q = query == null ? "" : query.trim().toLowerCase(Locale.ROOT);
         shownProducts.clear();

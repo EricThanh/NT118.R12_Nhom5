@@ -16,16 +16,14 @@
         <item name="android:textSize">13sp</item>
     </style>
 
-
     <style name="SellerFieldLabel">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/montserrat_regular</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/seller_text_primary</item>
         <item name="android:textSize">12sp</item>
     </style>
-
 
     <style name="SellerInput">
         <item name="android:layout_width">match_parent</item>
@@ -41,7 +39,6 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-
     <style name="SellerDayLabel">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -52,7 +49,6 @@
         <item name="android:textColor">@color/seller_chart_label</item>
         <item name="android:textSize">10sp</item>
     </style>
-
 
     <style name="SellerStatCard">
         <item name="android:layout_width">0dp</item>
@@ -81,7 +77,6 @@
         <item name="android:textColor">@color/seller_ink2</item>
         <item name="android:textSize">22sp</item>
     </style>
-
 
     <style name="SellerBestRow">
         <item name="android:layout_width">match_parent</item>
@@ -133,7 +128,6 @@
         <item name="android:textColor">@color/seller_ink2</item>
         <item name="android:textSize">13sp</item>
     </style>
-
 
     <style name="SellerHomeStat">
         <item name="android:layout_width">0dp</item>
@@ -218,7 +212,6 @@
         <item name="android:textColor">@color/seller_ink</item>
         <item name="android:textSize">14sp</item>
     </style>
-
 
     <style name="SellerSizeChip">
         <item name="android:layout_width">50dp</item>

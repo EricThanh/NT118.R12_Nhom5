@@ -17,7 +17,7 @@ final class SellerNavHelper {
         int[] navIds = {R.id.nav_home, R.id.nav_wishlist, R.id.nav_cart, R.id.nav_account};
         int[] icons = {R.drawable.ic_nav_home, R.drawable.ic_nav_dashboard,
                 R.drawable.ic_nav_products, R.drawable.ic_nav_orders};
-        int selectedColor = ContextCompat.getColor(activity, R.color.seller_ink);
+        int selectedColor = ContextCompat.getColor(activity, R.color.seller_primary);
         int unselectedColor = ContextCompat.getColor(activity, R.color.seller_gray_text);
 
         for (int i = 0; i < navIds.length; i++) {
