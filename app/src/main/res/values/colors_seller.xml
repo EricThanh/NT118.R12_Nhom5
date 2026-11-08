@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Bảng màu Seller -->
     <color name="seller_background">#FFFFFF</color>
     <color name="seller_primary">#1152FD</color>
     <color name="seller_surface">#FFFFFF</color>
@@ -9,7 +8,6 @@
     <color name="seller_text_muted">#97ADB6</color>
     <color name="seller_divider">#D5DDE0</color>
 
-    <!-- Màu theo vai trò, trỏ về bảng màu ở trên -->
     <color name="seller_ink">@color/seller_text_primary</color>
     <color name="seller_ink2">@color/seller_text_primary</color>
     <color name="seller_ink_filter">@color/seller_text_primary</color>
@@ -28,7 +26,6 @@
     <color name="seller_home_border">@color/seller_divider</color>
     <color name="seller_banner">@color/seller_primary</color>
 
-    <!-- Biểu đồ nằm trên thẻ doanh thu nền primary -->
     <color name="seller_chart_bar">#80FFFFFF</color>
     <color name="seller_chart_label">#CCFFFFFF</color>
     <color name="seller_delta_bg">#33FFFFFF</color>

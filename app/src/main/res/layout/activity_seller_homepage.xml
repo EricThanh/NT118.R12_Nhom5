@@ -18,7 +18,6 @@
             android:orientation="vertical"
             android:paddingBottom="16dp">
 
-            <!-- Header: avatar 53dp, lời chào, chuông 60dp -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,7 +54,6 @@
                     android:src="@drawable/ic_seller_bell" />
             </LinearLayout>
 
-            <!-- Banner 326x131 -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="131dp"
@@ -64,7 +62,6 @@
                 android:layout_marginEnd="23dp"
                 android:background="@drawable/seller_bg_banner" />
 
-            <!-- 3 thẻ thống kê 100x60, gap 16 -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,7 +87,6 @@
                     android:text="5\nNew Orders" />
             </LinearLayout>
 
-            <!-- 2 nút 137x41, gap 40 -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -124,7 +120,6 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- Thẻ sản phẩm 303x114 -->
             <LinearLayout
                 style="@style/SellerHomeCard"
                 android:layout_marginTop="23dp">

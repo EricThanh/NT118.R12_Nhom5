@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Tab lọc ở màn SellerProduct: cao 31dp, cách nhau 8dp -->
     <style name="SellerTab">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">31dp</item>
@@ -11,7 +10,6 @@
         <item name="android:textSize">13sp</item>
     </style>
 
-    <!-- Nhãn của form AddProduct -->
     <style name="SellerFieldLabel">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -21,7 +19,6 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-    <!-- Ô nhập của form AddProduct: cao 44dp, bo 8dp -->
     <style name="SellerInput">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">44dp</item>
@@ -36,7 +33,6 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-    <!-- Dashboard: nhãn ngày dưới biểu đồ -->
     <style name="SellerDayLabel">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -48,7 +44,6 @@
         <item name="android:textSize">10sp</item>
     </style>
 
-    <!-- Dashboard: thẻ thống kê, padding 14dp, bo 14dp -->
     <style name="SellerStatCard">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -77,7 +72,6 @@
         <item name="android:textSize">22sp</item>
     </style>
 
-    <!-- Dashboard: dòng Best sellers -->
     <style name="SellerBestRow">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -129,7 +123,6 @@
         <item name="android:textSize">13sp</item>
     </style>
 
-    <!-- Homepage: thẻ thống kê 100x60, viền đen -->
     <style name="SellerHomeStat">
         <item name="android:layout_width">100dp</item>
         <item name="android:layout_height">60dp</item>
@@ -143,7 +136,6 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-    <!-- Homepage: thẻ sản phẩm 303x114, ảnh 92.6x102 -->
     <style name="SellerHomeCard">
         <item name="android:layout_width">303dp</item>
         <item name="android:layout_height">114dp</item>
@@ -210,7 +202,6 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <!-- Nút chọn size: 50x50dp -->
     <style name="SellerSizeChip">
         <item name="android:layout_width">50dp</item>
         <item name="android:layout_height">50dp</item>

@@ -6,7 +6,6 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <!-- Header: mũi tên 24dp + gap 12 + tiêu đề 22 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,7 +49,6 @@
             android:paddingEnd="39dp"
             android:paddingBottom="24dp">
 
-            <!-- Upload photos: 3 ô 70dp, gap 20 -->
             <TextView
                 style="@style/SellerFieldLabel"
                 android:fontFamily="@font/montserrat_regular"
@@ -123,7 +121,6 @@
                 android:hint="e.g. Manga/Novel"
                 android:inputType="text" />
 
-            <!-- Price + Stock: 2 cột, gap 32 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -171,7 +168,6 @@
                 android:layout_marginTop="31dp"
                 android:text="Available Size" />
 
-            <!-- Size: chip 50dp, gap 28 -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -205,7 +201,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Nút dưới: 130x53dp, cách đáy 40dp -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
