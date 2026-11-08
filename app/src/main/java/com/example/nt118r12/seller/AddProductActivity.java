@@ -22,7 +22,7 @@ public class AddProductActivity extends AppCompatActivity {
         findViewById(R.id.btn_add_photo).setOnClickListener(v ->
                 Toast.makeText(this, "Chọn ảnh chưa có", Toast.LENGTH_SHORT).show());
 
-    
+
         for (int id : sizeIds) {
             TextView chip = findViewById(id);
             chip.setSelected(id == R.id.size_39);

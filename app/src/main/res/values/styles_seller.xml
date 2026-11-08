@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="SellerOrderTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
     <style name="SellerTab">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">31dp</item>
@@ -124,32 +130,37 @@
     </style>
 
     <style name="SellerHomeStat">
-        <item name="android:layout_width">100dp</item>
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minHeight">76dp</item>
         <item name="android:background">@drawable/seller_bg_home_stat</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:paddingStart">8dp</item>
-        <item name="android:paddingEnd">2dp</item>
-        <item name="android:textColor">@color/seller_text_primary</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@color/seller_ink</item>
+        <item name="android:textSize">13sp</item>
     </style>
 
     <style name="SellerHomeCard">
-        <item name="android:layout_width">303dp</item>
-        <item name="android:layout_height">114dp</item>
-        <item name="android:layout_marginStart">33dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
         <item name="android:background">@drawable/seller_bg_home_card</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
-        <item name="android:paddingStart">6dp</item>
-        <item name="android:paddingEnd">12dp</item>
+        <item name="android:padding">10dp</item>
     </style>
 
     <style name="SellerHomeThumb">
-        <item name="android:layout_width">92.6dp</item>
-        <item name="android:layout_height">102dp</item>
+        <item name="android:layout_width">88dp</item>
+        <item name="android:layout_height">88dp</item>
         <item name="android:background">@drawable/seller_bg_home_thumb</item>
     </style>
 
@@ -159,7 +170,7 @@
         <item name="android:fontFamily">@font/montserrat_semibold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_ink</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="SellerHomePrice">
@@ -169,7 +180,7 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_ink</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="SellerHomeQtyRow">

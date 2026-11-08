@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
@@ -16,20 +15,19 @@ final class SellerNavHelper {
 
     static void setup(Activity activity, int selectedNavId) {
         int[] navIds = {R.id.nav_home, R.id.nav_wishlist, R.id.nav_cart, R.id.nav_account};
+        int[] icons = {R.drawable.ic_nav_home, R.drawable.ic_nav_dashboard,
+                R.drawable.ic_nav_products, R.drawable.ic_nav_orders};
         int selectedColor = ContextCompat.getColor(activity, R.color.seller_primary);
         int unselectedColor = ContextCompat.getColor(activity, R.color.seller_gray_text);
 
-        for (int id : navIds) {
+        for (int i = 0; i < navIds.length; i++) {
+            final int id = navIds[i];
             ImageView nav = activity.findViewById(id);
+            nav.setImageResource(icons[i]);
             nav.setImageTintList(ColorStateList.valueOf(id == selectedNavId ? selectedColor : unselectedColor));
             nav.setOnClickListener(v -> {
                 if (id == selectedNavId) return;
-                Class<? extends Activity> target = targetFor(id);
-                if (target == null) {
-                    Toast.makeText(activity, "Chưa có màn này", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Intent intent = new Intent(activity, target);
+                Intent intent = new Intent(activity, targetFor(id));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 activity.startActivity(intent);
                 activity.finish();
@@ -42,6 +40,6 @@ final class SellerNavHelper {
         if (navId == R.id.nav_home) return SellerHomepageActivity.class;
         if (navId == R.id.nav_wishlist) return SellerDashboardActivity.class;
         if (navId == R.id.nav_cart) return SellerProductActivity.class;
-        return null;
+        return SellerOrdersActivity.class;
     }
 }
