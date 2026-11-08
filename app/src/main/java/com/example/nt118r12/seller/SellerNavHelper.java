@@ -10,15 +10,13 @@ import androidx.core.content.ContextCompat;
 
 import com.example.nt118r12.R;
 
-// Dùng lại layout_bottom_nav của khách hàng: home -> Homepage, heart -> Dashboard,
-// bag -> Products, user -> Account (chưa có màn).
 final class SellerNavHelper {
     private SellerNavHelper() {
     }
 
     static void setup(Activity activity, int selectedNavId) {
         int[] navIds = {R.id.nav_home, R.id.nav_wishlist, R.id.nav_cart, R.id.nav_account};
-        int selectedColor = ContextCompat.getColor(activity, R.color.seller_ink);
+        int selectedColor = ContextCompat.getColor(activity, R.color.seller_primary);
         int unselectedColor = ContextCompat.getColor(activity, R.color.seller_gray_text);
 
         for (int id : navIds) {

@@ -120,7 +120,7 @@
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:text="View Orders"
-                    android:textColor="@color/black"
+                    android:textColor="@color/seller_primary"
                     android:textSize="12sp" />
             </LinearLayout>
 
