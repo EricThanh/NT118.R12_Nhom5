@@ -9,28 +9,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/btn_back"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Back"
-            android:scaleType="center"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Quay lại"
+            android:padding="10dp"
+            android:scaleType="centerInside"
             android:src="@drawable/ic_seller_arrow_left" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="8dp"
             android:fontFamily="@font/montserrat_bold"
             android:includeFontPadding="false"
-            android:text="Add product"
+            android:text="Thêm sản phẩm"
             android:textColor="@color/seller_ink"
-            android:textSize="22sp" />
+            android:textSize="24sp" />
     </LinearLayout>
 
     <ScrollView
@@ -44,98 +47,98 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingStart="34dp"
-            android:paddingTop="24dp"
-            android:paddingEnd="39dp"
+            android:paddingStart="24dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="24dp"
             android:paddingBottom="24dp">
 
             <TextView
                 style="@style/SellerFieldLabel"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="Upload photos (up to 5)"
-                android:textColor="@color/seller_ink_filter"
-                android:textSize="14sp" />
+                android:text="Ảnh sản phẩm (tối đa 5)" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/btn_add_photo"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/seller_bg_photo_add"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
                         android:contentDescription="@null"
                         android:src="@drawable/ic_seller_camera" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:includeFontPadding="false"
-                        android:text="Add"
-                        android:textColor="@color/seller_text_primary"
+                        android:text="Thêm"
+                        android:textColor="@color/seller_ink"
                         android:textSize="14sp" />
                 </LinearLayout>
 
                 <View
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="12dp"
                     android:background="@drawable/seller_bg_photo" />
 
                 <View
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="12dp"
                     android:background="@drawable/seller_bg_photo" />
             </LinearLayout>
 
             <TextView
                 style="@style/SellerFieldLabel"
                 android:layout_marginTop="24dp"
-                android:text="Product name" />
+                android:text="Tên sản phẩm" />
 
             <EditText
                 android:id="@+id/et_product_name"
                 style="@style/SellerInput"
-                android:hint="e.g. IPhone 16"
+                android:hint="Ví dụ: Nike Air Max 270"
                 android:inputType="textCapWords" />
 
             <TextView
                 style="@style/SellerFieldLabel"
-                android:layout_marginTop="31dp"
-                android:text="Category" />
+                android:layout_marginTop="20dp"
+                android:text="Danh mục" />
 
             <EditText
                 android:id="@+id/et_category"
                 style="@style/SellerInput"
-                android:hint="e.g. Manga/Novel"
+                android:hint="Ví dụ: Giày chạy bộ"
                 android:inputType="text" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="31dp"
+                android:layout_marginTop="20dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         style="@style/SellerFieldLabel"
-                        android:text="Price ($)" />
+                        android:text="Giá" />
 
                     <EditText
                         android:id="@+id/et_price"
@@ -147,13 +150,13 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
+                    android:layout_marginStart="8dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         style="@style/SellerFieldLabel"
-                        android:text="Stock" />
+                        android:text="Tồn kho" />
 
                     <EditText
                         android:id="@+id/et_stock"
@@ -165,78 +168,88 @@
 
             <TextView
                 style="@style/SellerFieldLabel"
-                android:layout_marginTop="31dp"
-                android:text="Available Size" />
+                android:layout_marginTop="20dp"
+                android:text="Kích cỡ có sẵn" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="12dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/size_38"
                     style="@style/SellerSizeChip"
+                    android:layout_marginEnd="6dp"
                     android:text="38" />
 
                 <TextView
                     android:id="@+id/size_39"
                     style="@style/SellerSizeChip"
-                    android:layout_marginStart="28dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
                     android:text="39" />
 
                 <TextView
                     android:id="@+id/size_40"
                     style="@style/SellerSizeChip"
-                    android:layout_marginStart="28dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
                     android:text="40" />
 
                 <TextView
                     android:id="@+id/size_41"
                     style="@style/SellerSizeChip"
-                    android:layout_marginStart="28dp"
+                    android:layout_marginStart="6dp"
                     android:text="41" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/seller_border" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="40dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_save_draft"
-            android:layout_width="130dp"
-            android:layout_height="53dp"
-            android:background="@drawable/seller_bg_btn_draft"
-            android:fontFamily="@font/montserrat_bold"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="Save draft"
-            android:textColor="@color/seller_primary"
-            android:textSize="16sp" />
-
-        <View
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/btn_publish"
-            android:layout_width="130dp"
-            android:layout_height="53dp"
-            android:background="@drawable/seller_bg_ink_r10"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="@drawable/seller_bg_btn_draft"
+            android:elevation="0dp"
             android:fontFamily="@font/montserrat_bold"
-            android:gravity="center"
             android:includeFontPadding="false"
-            android:text="Publish"
+            android:minHeight="0dp"
+            android:stateListAnimator="@null"
+            android:text="Lưu nháp"
+            android:textAllCaps="false"
+            android:textColor="@color/seller_primary"
+            android:textSize="17sp"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_publish"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="@drawable/seller_bg_ink_r10"
+            android:elevation="0dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:includeFontPadding="false"
+            android:minHeight="0dp"
+            android:stateListAnimator="@null"
+            android:text="Đăng bán"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
     </LinearLayout>
 </LinearLayout>

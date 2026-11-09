@@ -45,7 +45,7 @@ public class SellerOrdersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_seller_orders);
         SellerUi.applyLightStatusBar(this);
 
-        SellerNavHelper.setup(this, R.id.nav_wishlist);
+        SellerNavHelper.setup(this, R.id.nav_account);
 
         List<SellerOrder> orders = new ArrayList<>();
         orders.add(new SellerOrder("#1024", "12/10/2023, 14:30", "Alex Johnson", 282.00, SellerOrder.STATUS_NEW));

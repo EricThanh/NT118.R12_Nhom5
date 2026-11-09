@@ -9,17 +9,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
+        android:minHeight="60dp"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp">
 
         <ImageView
             android:id="@+id/btn_back"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Quay lại"
+            android:padding="10dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_back"
             app:tint="@color/seller_ink" />
@@ -30,10 +32,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:ellipsize="end"
             android:fontFamily="@font/montserrat_bold"
+            android:includeFontPadding="false"
+            android:maxLines="1"
             android:text="Đơn hàng #1024"
             android:textColor="@color/seller_ink"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <View
@@ -45,7 +50,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@color/bg_gray_light"
         android:clipToPadding="false"
+        android:overScrollMode="never"
         android:padding="20dp">
 
         <LinearLayout
@@ -67,22 +74,22 @@
                     android:background="@drawable/seller_bg_badge"
                     android:fontFamily="@font/montserrat_bold"
                     android:includeFontPadding="false"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="4dp"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
                     android:text="Đang chờ xác nhận"
                     android:textColor="@color/seller_ink"
-                    android:textSize="11sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_placed_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/montserrat_regular"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_medium"
                     android:includeFontPadding="false"
                     android:text="Đặt lúc: 12/10/2023, 14:30"
-                    android:textColor="@color/seller_gray_text"
-                    android:textSize="12sp" />
+                    android:textColor="@color/text_body"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -97,20 +104,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
+                    android:includeFontPadding="false"
                     android:text="Thông tin người mua"
                     android:textColor="@color/seller_ink"
-                    android:textSize="14sp" />
+                    android:textSize="17sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="42dp"
-                        android:layout_height="42dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:background="@drawable/seller_bg_home_avatar"
                         android:contentDescription="@null"
                         android:scaleType="centerInside"
@@ -130,29 +138,29 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat_bold"
                             android:includeFontPadding="false"
-                            android:text="Alex Johnson"
+                            android:text="Nguyen Van A"
                             android:textColor="@color/seller_ink"
-                            android:textSize="13sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/tv_buyer_phone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:fontFamily="@font/montserrat_regular"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/montserrat_medium"
                             android:includeFontPadding="false"
                             android:text="+84 912 345 678"
-                            android:textColor="@color/seller_gray_text"
-                            android:textSize="12sp" />
+                            android:textColor="@color/text_body"
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <ImageView
                         android:id="@+id/btn_message_buyer"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
                         android:background="@drawable/seller_bg_search"
                         android:contentDescription="Nhắn tin cho người mua"
-                        android:padding="8dp"
+                        android:padding="10dp"
                         android:src="@drawable/ic_chat"
                         app:tint="@color/seller_ink" />
                 </LinearLayout>
@@ -160,7 +168,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginVertical="12dp"
+                    android:layout_marginVertical="14dp"
                     android:background="@color/seller_border" />
 
                 <LinearLayout
@@ -170,9 +178,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_marginTop="1dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:contentDescription="@null"
                         android:src="@drawable/ic_location"
                         app:tint="@color/seller_ink" />
@@ -181,14 +188,14 @@
                         android:id="@+id/tv_shipping_address"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:fontFamily="@font/montserrat_medium"
                         android:includeFontPadding="false"
-                        android:lineSpacingExtra="2dp"
+                        android:lineSpacingExtra="4dp"
                         android:text="123 Nguyễn Văn Linh, phường Tân Phong, Quận 7, TP. Hồ Chí Minh"
                         android:textColor="@color/seller_ink"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -205,15 +212,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
+                    android:includeFontPadding="false"
                     android:text="Sản phẩm đã đặt (2)"
                     android:textColor="@color/seller_ink"
-                    android:textSize="14sp" />
+                    android:textSize="17sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_order_items"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     android:nestedScrollingEnabled="false"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
             </LinearLayout>
@@ -231,64 +239,70 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
+                    android:includeFontPadding="false"
                     android:text="Tóm tắt thanh toán"
                     android:textColor="@color/seller_ink"
-                    android:textSize="14sp" />
+                    android:textSize="17sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:includeFontPadding="false"
                         android:text="Phương thức thanh toán"
-                        android:textColor="@color/seller_gray_text"
-                        android:textSize="12sp" />
+                        android:textColor="@color/text_body"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/tv_payment_method"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_semibold"
+                        android:includeFontPadding="false"
                         android:text="MasterCard (**** 4242)"
                         android:textColor="@color/seller_ink"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:includeFontPadding="false"
                         android:text="Phí vận chuyển"
-                        android:textColor="@color/seller_gray_text"
-                        android:textSize="12sp" />
+                        android:textColor="@color/text_body"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/tv_shipping_fee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_semibold"
+                        android:includeFontPadding="false"
                         android:text="$2.00"
                         android:textColor="@color/seller_ink"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginVertical="10dp"
+                    android:layout_marginVertical="12dp"
                     android:background="@color/seller_border" />
 
                 <LinearLayout
@@ -302,58 +316,72 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/montserrat_bold"
+                        android:includeFontPadding="false"
                         android:text="Tổng cộng"
                         android:textColor="@color/seller_ink"
-                        android:textSize="14sp" />
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/tv_total_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_bold"
+                        android:includeFontPadding="false"
                         android:text="$282.00"
-                        android:textColor="@color/seller_ink"
-                        android:textSize="16sp" />
+                        android:textColor="@color/primary"
+                        android:textSize="22sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/seller_border" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
+        android:elevation="0dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp">
+        android:paddingVertical="12dp">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_reject"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="52dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:background="@drawable/seller_bg_btn_outlined"
+            android:elevation="0dp"
             android:fontFamily="@font/montserrat_bold"
-            android:gravity="center"
             android:includeFontPadding="false"
+            android:minHeight="0dp"
+            android:stateListAnimator="@null"
             android:text="Từ chối"
+            android:textAllCaps="false"
             android:textColor="@color/seller_ink"
-            android:textSize="13sp" />
+            android:textSize="16sp" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_confirm"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="52dp"
             android:layout_marginStart="8dp"
             android:layout_weight="1.6"
             android:background="@drawable/seller_bg_ink_r10"
+            android:elevation="0dp"
             android:fontFamily="@font/montserrat_bold"
-            android:gravity="center"
             android:includeFontPadding="false"
+            android:minHeight="0dp"
+            android:stateListAnimator="@null"
             android:text="Xác nhận đơn"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="13sp" />
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

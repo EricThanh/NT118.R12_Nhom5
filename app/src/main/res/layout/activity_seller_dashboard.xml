@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -20,31 +20,32 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Dashboard"
+            android:includeFontPadding="false"
+            android:text="Tổng quan"
             android:textColor="@color/seller_ink2"
-            android:textSize="22sp" />
+            android:textSize="26sp" />
 
         <LinearLayout
             android:id="@+id/btn_period"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
+            android:layout_height="40dp"
             android:background="@drawable/seller_bg_period"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingHorizontal="12dp">
+            android:paddingHorizontal="14dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_semibold"
                 android:includeFontPadding="false"
-                android:text="This week"
+                android:text="Tuần này"
                 android:textColor="@color/seller_ink2"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
 
             <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:layout_marginStart="6dp"
                 android:contentDescription="@null"
                 android:src="@drawable/ic_seller_down" />
@@ -62,74 +63,102 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingStart="24dp"
-            android:paddingTop="16dp"
+            android:paddingTop="20dp"
             android:paddingEnd="24dp"
-            android:paddingBottom="16dp">
+            android:paddingBottom="24dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/seller_bg_revenue"
                 android:orientation="vertical"
-                android:padding="18dp">
+                android:padding="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="bottom"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:includeFontPadding="false"
-                            android:text="Revenue"
-                            android:textColor="@color/seller_chart_label"
-                            android:textSize="11sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:fontFamily="@font/montserrat_bold"
-                            android:includeFontPadding="false"
-                            android:text="$2,840.00"
-                            android:textColor="@color/white"
-                            android:textSize="26sp" />
-                    </LinearLayout>
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:includeFontPadding="false"
+                        android:text="Doanh thu"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:includeFontPadding="false"
+                        android:text="$2,840.00"
+                        android:textColor="@color/white"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/seller_bg_delta"
                         android:fontFamily="@font/montserrat_semibold"
                         android:includeFontPadding="false"
-                        android:paddingHorizontal="8dp"
-                        android:paddingVertical="4dp"
-                        android:text="▲ 12% vs last week"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:text="▲ 12% so với tuần trước"
                         android:textColor="@color/white"
-                        android:textSize="11sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="14dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="18dp"
                     android:gravity="bottom"
                     android:orientation="horizontal">
 
                     <View
                         android:layout_width="0dp"
-                        android:layout_height="36dp"
+                        android:layout_height="40dp"
                         android:layout_weight="1"
                         android:background="@drawable/seller_bg_bar" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/seller_bg_bar" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/seller_bg_bar" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/seller_bg_bar" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/seller_bg_bar" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/seller_bg_bar_active" />
 
                     <View
                         android:layout_width="0dp"
@@ -137,84 +166,49 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/seller_bg_bar" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="31dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/seller_bg_bar" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="63dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/seller_bg_bar" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="54dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/seller_bg_bar" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="90dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/seller_bg_bar_active" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="45dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/seller_bg_bar" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
+                    android:layout_marginTop="12dp"
                     android:orientation="horizontal">
 
                     <TextView
                         style="@style/SellerDayLabel"
-                        android:text="M" />
+                        android:text="T2" />
 
                     <TextView
                         style="@style/SellerDayLabel"
                         android:layout_marginStart="10dp"
-                        android:text="T" />
+                        android:text="T3" />
 
                     <TextView
                         style="@style/SellerDayLabel"
                         android:layout_marginStart="10dp"
-                        android:text="W" />
+                        android:text="T4" />
 
                     <TextView
                         style="@style/SellerDayLabel"
                         android:layout_marginStart="10dp"
-                        android:text="T" />
+                        android:text="T5" />
 
                     <TextView
                         style="@style/SellerDayLabel"
                         android:layout_marginStart="10dp"
-                        android:text="F" />
+                        android:text="T6" />
 
                     <TextView
                         style="@style/SellerDayLabel"
                         android:layout_marginStart="10dp"
                         android:fontFamily="@font/montserrat_bold"
-                        android:text="S"
+                        android:text="T7"
                         android:textColor="@color/white" />
 
                     <TextView
                         style="@style/SellerDayLabel"
                         android:layout_marginStart="10dp"
-                        android:text="S" />
+                        android:text="CN" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -222,6 +216,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -230,7 +225,7 @@
 
                     <TextView
                         style="@style/SellerStatLabel"
-                        android:text="New orders" />
+                        android:text="Đơn mới" />
 
                     <TextView
                         style="@style/SellerStatValue"
@@ -243,7 +238,7 @@
 
                     <TextView
                         style="@style/SellerStatLabel"
-                        android:text="To ship" />
+                        android:text="Cần giao" />
 
                     <TextView
                         style="@style/SellerStatValue"
@@ -255,6 +250,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -263,7 +259,7 @@
 
                     <TextView
                         style="@style/SellerStatLabel"
-                        android:text="Orders this week" />
+                        android:text="Đơn trong tuần" />
 
                     <TextView
                         style="@style/SellerStatValue"
@@ -276,7 +272,7 @@
 
                     <TextView
                         style="@style/SellerStatLabel"
-                        android:text="Out of stock" />
+                        android:text="Hết hàng" />
 
                     <TextView
                         style="@style/SellerStatValue"
@@ -287,7 +283,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="28dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -297,31 +293,31 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_bold"
                     android:includeFontPadding="false"
-                    android:text="Best sellers"
+                    android:text="Bán chạy nhất"
                     android:textColor="@color/seller_ink2"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_see_all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
+                    android:fontFamily="@font/montserrat_bold"
                     android:includeFontPadding="false"
-                    android:text="See all"
-                    android:textColor="@color/seller_sub"
-                    android:textSize="12sp" />
+                    android:padding="4dp"
+                    android:text="Xem tất cả"
+                    android:textColor="@color/primary"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
                 style="@style/SellerBestRow"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="14dp">
 
                 <TextView
                     style="@style/SellerBestRank"
                     android:text="1" />
 
-                <View
-                    style="@style/SellerBestThumb" />
+                <View style="@style/SellerBestThumb" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -335,7 +331,7 @@
 
                     <TextView
                         style="@style/SellerBestSold"
-                        android:text="11 sold" />
+                        android:text="Đã bán 11" />
                 </LinearLayout>
 
                 <TextView
@@ -345,14 +341,13 @@
 
             <LinearLayout
                 style="@style/SellerBestRow"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="14dp">
 
                 <TextView
                     style="@style/SellerBestRank"
                     android:text="2" />
 
-                <View
-                    style="@style/SellerBestThumb" />
+                <View style="@style/SellerBestThumb" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -366,7 +361,7 @@
 
                     <TextView
                         style="@style/SellerBestSold"
-                        android:text="6 sold" />
+                        android:text="Đã bán 6" />
                 </LinearLayout>
 
                 <TextView

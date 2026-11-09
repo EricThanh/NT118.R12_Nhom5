@@ -39,7 +39,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         Product product = productList.get(position);
         holder.tvName.setText(product.getName());
         holder.tvPrice.setText("$" + product.getPrice());
-        // For demonstration, use placeholder
+
         if(holder.ivProduct != null) holder.ivProduct.setImageResource(R.layout.item_product_horizontal == R.layout.item_product_horizontal ? R.drawable.placeholder_shoe : R.drawable.placeholder_shoe); // dummy logic
 
         if (holder.ivAdd != null) {

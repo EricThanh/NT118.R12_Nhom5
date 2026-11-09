@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="SellerOrderTabTextAppearance" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="textAllCaps">false</item>
     </style>
@@ -19,24 +19,24 @@
     <style name="SellerFieldLabel">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/seller_text_primary</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/seller_ink</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="SellerInput">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">44dp</item>
-        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_marginTop">10dp</item>
         <item name="android:background">@drawable/seller_bg_input</item>
-        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:maxLines">1</item>
-        <item name="android:paddingHorizontal">12dp</item>
+        <item name="android:paddingHorizontal">14dp</item>
         <item name="android:textColor">@color/seller_ink</item>
-        <item name="android:textColorHint">@color/seller_hint</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="SellerDayLabel">
@@ -47,7 +47,7 @@
         <item name="android:gravity">center</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_chart_label</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="SellerStatCard">
@@ -56,7 +56,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:background">@drawable/seller_bg_stat</item>
         <item name="android:orientation">vertical</item>
-        <item name="android:padding">14dp</item>
+        <item name="android:padding">16dp</item>
     </style>
 
     <style name="SellerStatLabel">
@@ -64,20 +64,19 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/montserrat_medium</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/seller_sub</item>
-        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/text_body</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="SellerStatValue">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:layout_marginTop">8dp</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_ink2</item>
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">28sp</item>
     </style>
-
     <style name="SellerBestRow">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -86,18 +85,18 @@
     </style>
 
     <style name="SellerBestRank">
-        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_width">28dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/seller_sub</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_body</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="SellerBestThumb">
-        <item name="android:layout_width">44dp</item>
-        <item name="android:layout_height">44dp</item>
-        <item name="android:layout_marginEnd">12dp</item>
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_marginEnd">14dp</item>
         <item name="android:background">@drawable/seller_bg_thumb_f2</item>
     </style>
 
@@ -107,17 +106,17 @@
         <item name="android:fontFamily">@font/montserrat_semibold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_ink2</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="SellerBestSold">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginTop">4dp</item>
         <item name="android:fontFamily">@font/montserrat_medium</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/seller_sub</item>
-        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/text_body</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="SellerBestPrice">
@@ -126,9 +125,8 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_ink2</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
-
     <style name="SellerHomeStat">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -214,11 +212,12 @@
     </style>
 
     <style name="SellerSizeChip">
-        <item name="android:layout_width">50dp</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
         <item name="android:gravity">center</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

@@ -46,6 +46,20 @@ public class SellerProductAdapter extends RecyclerView.Adapter<SellerProductAdap
         notifyDataSetChanged();
     }
 
+    private static String statusLabel(String status) {
+        if (status == null) return "";
+        switch (status) {
+            case "Active":
+                return "Đang bán";
+            case "Out of stock":
+                return "Hết hàng";
+            case "Hidden":
+                return "Đã ẩn";
+            default:
+                return status;
+        }
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -58,8 +72,8 @@ public class SellerProductAdapter extends RecyclerView.Adapter<SellerProductAdap
         SellerProduct product = shownProducts.get(position);
         holder.tvName.setText(product.getName());
         holder.tvPrice.setText(String.format(Locale.US, "$%.2f", product.getPrice()));
-        holder.tvStatus.setText(product.getStatus());
-        holder.tvStock.setText("Stock: " + product.getStock());
+        holder.tvStatus.setText(statusLabel(product.getStatus()));
+        holder.tvStock.setText("Kho: " + product.getStock());
         holder.ivEdit.setOnClickListener(v -> {
             if (listener != null) listener.onEditClick(product);
         });

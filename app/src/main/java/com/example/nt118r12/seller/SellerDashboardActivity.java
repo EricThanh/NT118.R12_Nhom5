@@ -20,7 +20,7 @@ public class SellerDashboardActivity extends AppCompatActivity {
         SellerNavHelper.setup(this, R.id.nav_wishlist);
 
         findViewById(R.id.btn_period).setOnClickListener(v ->
-                Toast.makeText(this, "Chọn khoảng thời gian chưa có", Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, "", Toast.LENGTH_SHORT).show());
         TextView tvSeeAll = findViewById(R.id.tv_see_all);
         tvSeeAll.setPaintFlags(tvSeeAll.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         tvSeeAll.setOnClickListener(v ->
