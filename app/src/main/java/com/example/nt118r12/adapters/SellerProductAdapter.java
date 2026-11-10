@@ -15,6 +15,7 @@ import com.example.nt118r12.models.SellerProduct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import com.example.nt118r12.MoneyUtil;
 
 public class SellerProductAdapter extends RecyclerView.Adapter<SellerProductAdapter.ViewHolder> {
     private final List<SellerProduct> allProducts;
@@ -71,7 +72,7 @@ public class SellerProductAdapter extends RecyclerView.Adapter<SellerProductAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SellerProduct product = shownProducts.get(position);
         holder.tvName.setText(product.getName());
-        holder.tvPrice.setText(String.format(Locale.US, "$%.2f", product.getPrice()));
+        holder.tvPrice.setText(MoneyUtil.vnd(product.getPrice()));
         holder.tvStatus.setText(statusLabel(product.getStatus()));
         holder.tvStock.setText("Kho: " + product.getStock());
         holder.ivEdit.setOnClickListener(v -> {

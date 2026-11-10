@@ -7,6 +7,9 @@
     <color name="seller_text_secondary">#D5DDE0</color>
     <color name="seller_text_muted">#97ADB6</color>
     <color name="seller_divider">#D5DDE0</color>
+    <color name="badge_active_bg">#E8EEFF</color>
+    <color name="badge_out_bg">#FDE7EA</color>
+    <color name="badge_hidden_bg">#EEF0F3</color>
 
     <color name="seller_ink">@color/seller_text_primary</color>
     <color name="seller_ink2">@color/seller_text_primary</color>

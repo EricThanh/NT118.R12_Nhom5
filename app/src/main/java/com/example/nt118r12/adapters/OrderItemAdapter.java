@@ -12,7 +12,7 @@ import com.example.nt118r12.R;
 import com.example.nt118r12.models.OrderItem;
 
 import java.util.List;
-import java.util.Locale;
+import com.example.nt118r12.MoneyUtil;
 
 public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.ViewHolder> {
     private final List<OrderItem> items;
@@ -33,7 +33,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
         OrderItem item = items.get(position);
         holder.tvName.setText(item.getProductName());
         holder.tvSize.setText("Kích cỡ: " + item.getSize());
-        holder.tvPrice.setText(String.format(Locale.US, "$%.2f", item.getPrice()));
+        holder.tvPrice.setText(MoneyUtil.vnd(item.getPrice()));
         holder.tvQuantity.setText("x" + item.getQuantity());
     }
 

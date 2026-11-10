@@ -144,9 +144,9 @@
             android:id="@+id/sliderPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:stepSize="10"
+            android:stepSize="100000"
             android:valueFrom="0"
-            android:valueTo="500"
+            android:valueTo="10000000"
             app:haloColor="@color/primary_light"
             app:labelBehavior="gone"
             app:thumbColor="@color/primary"
@@ -182,9 +182,11 @@
                     android:id="@+id/tvPriceMin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$50"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="1.000.000đ"
                     android:textColor="@color/text_primary"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -214,9 +216,11 @@
                     android:id="@+id/tvPriceMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$250"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="5.000.000đ"
                     android:textColor="@color/text_primary"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>

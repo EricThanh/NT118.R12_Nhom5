@@ -16,7 +16,7 @@ import com.example.nt118r12.R;
 import com.example.nt118r12.models.Order;
 
 import java.util.List;
-import java.util.Locale;
+import com.example.nt118r12.MoneyUtil;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
 
@@ -152,7 +152,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     }
 
     private static String formatPrice(double price) {
-        return String.format(Locale.US, "$%.2f", price);
+        return MoneyUtil.vnd(price);
     }
 
     static class OrderViewHolder extends RecyclerView.ViewHolder {

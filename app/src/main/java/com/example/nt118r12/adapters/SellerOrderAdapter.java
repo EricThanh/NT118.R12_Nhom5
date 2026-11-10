@@ -14,6 +14,7 @@ import com.example.nt118r12.models.SellerOrder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import com.example.nt118r12.MoneyUtil;
 
 public class SellerOrderAdapter extends RecyclerView.Adapter<SellerOrderAdapter.ViewHolder> {
     private final List<SellerOrder> allOrders;
@@ -60,7 +61,7 @@ public class SellerOrderAdapter extends RecyclerView.Adapter<SellerOrderAdapter.
         holder.tvOrderId.setText(order.getOrderId());
         holder.tvOrderDate.setText(order.getOrderDate());
         holder.tvBuyerName.setText(order.getBuyerName());
-        holder.tvTotalPrice.setText(String.format(Locale.US, "$%.2f", order.getTotalPrice()));
+        holder.tvTotalPrice.setText(MoneyUtil.vnd(order.getTotalPrice()));
 
         if (SellerOrder.STATUS_COMPLETE.equals(order.getStatus())) {
             holder.layoutActions.setVisibility(View.GONE);

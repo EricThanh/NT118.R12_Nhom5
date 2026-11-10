@@ -54,8 +54,8 @@ public class CartFragment extends Fragment {
         RecyclerView rvCart = view.findViewById(R.id.rv_cart);
 
         cartItemList = new ArrayList<>();
-        cartItemList.add(new CartItem(new Product("Nike React Miler", 170.0, false), 1));
-        cartItemList.add(new CartItem(new Product("Nike Air Max 270", 112.0, false), 2));
+        cartItemList.add(new CartItem(new Product("Nike React Miler", 4250000.0, false), 1));
+        cartItemList.add(new CartItem(new Product("Nike Air Max 270", 2800000.0, false), 2));
 
         cartAdapter = new CartAdapter(cartItemList, this::calculateTotal);
         rvCart.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -93,6 +93,6 @@ public class CartFragment extends Fragment {
         for (CartItem item : cartItemList) {
             total += item.getProduct().getPrice() * item.getQuantity();
         }
-        tvTotalAmount.setText("$" + String.format("%.2f", total));
+        tvTotalAmount.setText(MoneyUtil.vnd(total));
     }
 }

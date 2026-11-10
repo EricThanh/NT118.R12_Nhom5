@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.nt118r12.R;
 import com.example.nt118r12.models.Product;
+import com.example.nt118r12.MoneyUtil;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -38,7 +39,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);
         holder.tvName.setText(product.getName());
-        holder.tvPrice.setText("$" + product.getPrice());
+        holder.tvPrice.setText(MoneyUtil.vnd(product.getPrice()));
 
         if(holder.ivProduct != null) holder.ivProduct.setImageResource(R.layout.item_product_horizontal == R.layout.item_product_horizontal ? R.drawable.placeholder_shoe : R.drawable.placeholder_shoe); // dummy logic
 

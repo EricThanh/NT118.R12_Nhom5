@@ -125,7 +125,9 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_ink2</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
     </style>
     <style name="SellerHomeStat">
         <item name="android:layout_width">0dp</item>
@@ -178,7 +180,9 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/seller_ink</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="SellerHomeQtyRow">

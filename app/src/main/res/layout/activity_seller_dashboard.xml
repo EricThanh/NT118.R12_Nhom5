@@ -94,22 +94,13 @@
                         android:layout_marginTop="6dp"
                         android:fontFamily="@font/montserrat_bold"
                         android:includeFontPadding="false"
-                        android:text="$2,840.00"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="28.400.000đ"
                         android:textColor="@color/white"
-                        android:textSize="32sp" />
+                        android:textSize="28sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/seller_bg_delta"
-                        android:fontFamily="@font/montserrat_semibold"
-                        android:includeFontPadding="false"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="5dp"
-                        android:text="▲ 12% so với tuần trước"
-                        android:textColor="@color/white"
-                        android:textSize="13sp" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -336,7 +327,7 @@
 
                 <TextView
                     style="@style/SellerBestPrice"
-                    android:text="$1,870" />
+                    android:text="1.870.000đ" />
             </LinearLayout>
 
             <LinearLayout
@@ -366,7 +357,7 @@
 
                 <TextView
                     style="@style/SellerBestPrice"
-                    android:text="$672" />
+                    android:text="672.000đ" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

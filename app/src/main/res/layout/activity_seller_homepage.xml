@@ -80,9 +80,11 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/montserrat_bold"
                     android:includeFontPadding="false"
-                    android:text="$840.00"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="8.400.000đ"
                     android:textColor="@color/white"
-                    android:textSize="30sp" />
+                    android:textSize="26sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -189,7 +191,7 @@
 
                     <TextView
                         style="@style/SellerHomePrice"
-                        android:text="$170.00" />
+                        android:text="4.250.000đ" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -222,7 +224,7 @@
 
                     <TextView
                         style="@style/SellerHomePrice"
-                        android:text="$112.00" />
+                        android:text="2.800.000đ" />
 
                     <TextView
                         android:layout_width="wrap_content"

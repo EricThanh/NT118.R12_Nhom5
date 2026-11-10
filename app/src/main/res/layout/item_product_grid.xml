@@ -78,9 +78,11 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_bold"
                 android:includeFontPadding="false"
-                android:text="$160.00"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="4.000.000đ"
                 android:textColor="@color/seller_ink"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/btn_quick_add"

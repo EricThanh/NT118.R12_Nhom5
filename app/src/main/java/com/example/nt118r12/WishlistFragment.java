@@ -57,9 +57,9 @@ public class WishlistFragment extends Fragment {
         RecyclerView rv = view.findViewById(R.id.rv_wishlist);
         EditText etSearch = view.findViewById(R.id.et_search);
 
-        allItems.add(new WishlistItem("Nike Air Max 270", 112.00));
-        allItems.add(new WishlistItem("Nike React Miler", 170.00));
-        allItems.add(new WishlistItem("Nike Air Force 1", 120.00));
+        allItems.add(new WishlistItem("Nike Air Max 270", 2800000.0));
+        allItems.add(new WishlistItem("Nike React Miler", 4250000.0));
+        allItems.add(new WishlistItem("Nike Air Force 1", 3000000.0));
         shownItems.addAll(allItems);
 
         adapter = new WishlistAdapter(shownItems);
@@ -139,7 +139,7 @@ public class WishlistFragment extends Fragment {
         public void onBindViewHolder(@NonNull Holder h, int position) {
             WishlistItem item = items.get(position);
             h.tvName.setText(item.name);
-            h.tvPrice.setText(String.format(Locale.US, "$%.2f", item.price));
+            h.tvPrice.setText(MoneyUtil.vnd(item.price));
             h.tvQuantity.setText(String.valueOf(item.quantity));
 
             h.tvPlus.setOnClickListener(v -> {

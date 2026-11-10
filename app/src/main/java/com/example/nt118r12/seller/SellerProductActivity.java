@@ -36,10 +36,10 @@ public class SellerProductActivity extends AppCompatActivity {
         SellerNavHelper.setup(this, R.id.nav_cart);
 
         List<SellerProduct> products = new ArrayList<>();
-        products.add(new SellerProduct("Nike React Miler", 170.0, SellerProduct.STATUS_ACTIVE, 12));
-        products.add(new SellerProduct("Nike Air Max 270", 112.0, SellerProduct.STATUS_ACTIVE, 8));
-        products.add(new SellerProduct("Nike Air Force 1", 120.0, SellerProduct.STATUS_OUT_OF_STOCK, 0));
-        products.add(new SellerProduct("Nike Free Metcon 3", 160.0, SellerProduct.STATUS_HIDDEN, 5));
+        products.add(new SellerProduct("Nike React Miler", 4250000, SellerProduct.STATUS_ACTIVE, 12));
+        products.add(new SellerProduct("Nike Air Max 270", 2800000, SellerProduct.STATUS_ACTIVE, 8));
+        products.add(new SellerProduct("Nike Air Force 1", 3000000, SellerProduct.STATUS_OUT_OF_STOCK, 0));
+        products.add(new SellerProduct("Nike Free Metcon 3", 4000000, SellerProduct.STATUS_HIDDEN, 5));
 
         adapter = new SellerProductAdapter(products, new SellerProductAdapter.OnProductActionListener() {
             @Override
@@ -59,7 +59,7 @@ public class SellerProductActivity extends AppCompatActivity {
         findViewById(R.id.btn_add_product).setOnClickListener(v ->
                 startActivity(new Intent(this, AddProductActivity.class)));
         findViewById(R.id.btn_filter).setOnClickListener(v ->
-                Toast.makeText(this, "Bộ lọc nâng cao chưa có", Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, "", Toast.LENGTH_SHORT).show());
 
         etSearch = findViewById(R.id.et_search_products);
         etSearch.addTextChangedListener(new TextWatcher() {

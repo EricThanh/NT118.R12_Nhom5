@@ -366,7 +366,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
-                            android:background="@drawable/bg_tag_default"
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="5dp"
                             android:text="Đã đến kho Quận 7, TP.HCM"
@@ -551,7 +550,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$224.00"
+                    android:text="5.630.000đ"
                     android:textColor="@color/text_primary"
                     android:textSize="17sp"
                     android:textStyle="bold" />

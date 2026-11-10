@@ -104,9 +104,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="$170.00"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="4.250.000đ"
                 android:textColor="@color/text_primary"
-                android:textSize="17sp" />
+                android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -149,9 +151,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="$282.00"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="4.280.000đ"
                 android:textColor="@color/text_primary"
-                android:textSize="19sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

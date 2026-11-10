@@ -21,7 +21,6 @@ import com.example.nt118r12.models.Product;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 public class ProductDetailActivity extends AppCompatActivity {
     public static final String PRODUCT_EXTRA = "PRODUCT_EXTRA";
@@ -44,7 +43,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         product = (Product) getIntent().getSerializableExtra(PRODUCT_EXTRA);
         if (product == null) {
-            product = new Product("Nike Air Max 270", 160.0, true);
+            product = new Product("Nike Air Max 270", 4000000.0, true);
         }
 
         initViews();
@@ -68,7 +67,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         tvSliderIndicator = findViewById(R.id.tv_slider_indicator);
 
         tvProductName.setText(product.getName());
-        tvProductPrice.setText(String.format(Locale.US, "$%.2f", product.getPrice()));
+        tvProductPrice.setText(MoneyUtil.vnd(product.getPrice()));
 
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
 
@@ -266,6 +265,6 @@ public class ProductDetailActivity extends AppCompatActivity {
 
     private void updateBottomBarPrice() {
         double total = product.getPrice() * quantity;
-        btnAddToCart.setText(String.format(Locale.US, "Thêm vào giỏ - $%.2f", total));
+        btnAddToCart.setText("Thêm vào giỏ - " + MoneyUtil.vnd(total));
     }
 }

@@ -41,13 +41,13 @@ public class CustomerOrdersActivity extends AppCompatActivity {
         tvEmpty = findViewById(R.id.tvEmpty);
 
         allOrders.add(new Order("1024", "22/10/2026 · 09:30", "Nike React Miler", "Size 42 · x1",
-                170.0, 2, 282.0, Order.STATUS_PENDING));
+                4250000.0, 1, 4280000.0, Order.STATUS_PENDING));
         allOrders.add(new Order("1019", "20/10/2026 · 14:12", "Nike Air Max 270", "Size 41 · x2",
-                224.0, 1, 224.0, Order.STATUS_SHIPPING));
+                2800000.0, 2, 5630000.0, Order.STATUS_SHIPPING));
         allOrders.add(new Order("1008", "12/10/2026 · 19:45", "Nike Free Metcon 5", "Size 40 · x1",
-                130.0, 1, 130.0, Order.STATUS_DELIVERED));
+                3200000.0, 1, 3230000.0, Order.STATUS_DELIVERED));
         allOrders.add(new Order("0997", "05/10/2026 · 08:20", "Nike Pegasus 41", "Size 42 · x1",
-                140.0, 1, 140.0, Order.STATUS_CANCELLED));
+                3500000.0, 1, 3530000.0, Order.STATUS_CANCELLED));
 
         RecyclerView rvOrders = findViewById(R.id.rvOrders);
         rvOrders.setLayoutManager(new LinearLayoutManager(this));

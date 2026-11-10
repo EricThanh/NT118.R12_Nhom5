@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.nt118r12.R;
 import com.example.nt118r12.models.CartItem;
+import com.example.nt118r12.MoneyUtil;
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
@@ -35,7 +36,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         CartItem item = cartItemList.get(position);
         holder.tvName.setText(item.getProduct().getName());
-        holder.tvPrice.setText("$" + item.getProduct().getPrice());
+        holder.tvPrice.setText(MoneyUtil.vnd(item.getProduct().getPrice()));
         holder.tvQuantity.setText(String.valueOf(item.getQuantity()));
 
         holder.ivPlus.setOnClickListener(v -> {

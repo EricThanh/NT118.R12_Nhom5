@@ -113,17 +113,14 @@
             android:id="@+id/tvLoginLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="20dp"
+            android:padding="8dp"
             android:text="Đã có tài khoản? Đăng nhập"
             android:textColor="@color/primary"
-            android:textSize="14sp"
-            android:padding="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="17sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnRegisterSubmit"
-            app:layout_constraintVertical_bias="1.0" />
-
+            app:layout_constraintTop_toBottomOf="@id/btnRegisterSubmit"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

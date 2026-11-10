@@ -37,14 +37,14 @@ public class ProductListFragment extends Fragment {
         etSearch = view.findViewById(R.id.et_search_products);
 
         List<Product> products = new ArrayList<>();
-        products.add(new Product("Nike Air Max 270", 160.00, 5, false));
-        products.add(new Product("Nike React Miler", 130.00, 3, true));
-        products.add(new Product("Nike Air Force 1 '07", 110.00, 6, false));
-        products.add(new Product("Nike Free Metcon 4", 120.00, 4, false));
-        products.add(new Product("Nike Blazer Mid '77", 105.00, 2, false));
-        products.add(new Product("Nike Pegasus 40", 140.00, 7, true));
-        products.add(new Product("Nike Invincible 3", 180.00, 3, false));
-        products.add(new Product("Nike Dunk Low Retro", 115.00, 4, false));
+        products.add(new Product("Nike Air Max 270", 4000000.0, 5, false));
+        products.add(new Product("Nike React Miler", 3250000.0, 3, true));
+        products.add(new Product("Nike Air Force 1 '07", 2750000.0, 6, false));
+        products.add(new Product("Nike Free Metcon 4", 3000000.0, 4, false));
+        products.add(new Product("Nike Blazer Mid '77", 2625000.0, 2, false));
+        products.add(new Product("Nike Pegasus 40", 3500000.0, 7, true));
+        products.add(new Product("Nike Invincible 3", 4500000.0, 3, false));
+        products.add(new Product("Nike Dunk Low Retro", 2875000.0, 4, false));
 
         RecyclerView rvGrid = view.findViewById(R.id.rv_products_grid);
         rvGrid.setLayoutManager(new GridLayoutManager(requireContext(), 2));

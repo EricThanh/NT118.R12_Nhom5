@@ -53,23 +53,16 @@
                 android:id="@+id/tv_seller_product_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/seller_bg_badge"
-                android:fontFamily="@font/montserrat_semibold"
-                android:includeFontPadding="false"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="4dp"
-                android:textColor="@color/seller_badge_text"
-                android:textSize="12sp" />
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tv_seller_product_stock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:fontFamily="@font/montserrat_semibold"
                 android:includeFontPadding="false"
                 android:textColor="@color/text_body"
-                android:textSize="13sp" />
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 

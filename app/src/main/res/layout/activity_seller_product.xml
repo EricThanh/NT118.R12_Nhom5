@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/montserrat_bold"
             android:includeFontPadding="false"
-            android:text="Sản phẩm của tôi"
+            android:text="Sản phẩm"
             android:textColor="@color/seller_ink"
             android:textSize="26sp" />
 
@@ -71,7 +71,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:fontFamily="@font/montserrat_semibold"
-                android:hint="Tìm sản phẩm của bạn"
+                android:hint=""
                 android:imeOptions="actionSearch"
                 android:includeFontPadding="false"
                 android:inputType="text"

@@ -16,6 +16,7 @@ import com.example.nt118r12.models.Product;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import com.example.nt118r12.MoneyUtil;
 
 public class ProductGridAdapter extends RecyclerView.Adapter<ProductGridAdapter.ViewHolder> {
     private final List<Product> originalList;
@@ -61,7 +62,7 @@ public class ProductGridAdapter extends RecyclerView.Adapter<ProductGridAdapter.
         Product product = filteredList.get(position);
         holder.tvName.setText(product.getName());
         holder.tvColors.setText(product.getColorsCount() + " màu sắc");
-        holder.tvPrice.setText(String.format(Locale.US, "$%.2f", product.getPrice()));
+        holder.tvPrice.setText(MoneyUtil.vnd(product.getPrice()));
 
         updateFavoriteIcon(holder.ivFavorite, product.isFavorite());
 

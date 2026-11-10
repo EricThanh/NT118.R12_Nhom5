@@ -24,8 +24,8 @@ public class SellerOrdersActivity extends AppCompatActivity {
     private TabLayout tabLayout;
 
     private final String[] tabLabels = new String[]{
-            "Mới (3)",
-            "Chờ giao (2)",
+            "Mới",
+            "Chờ giao",
             "Đang giao",
             "Hoàn thành"
     };
@@ -48,12 +48,12 @@ public class SellerOrdersActivity extends AppCompatActivity {
         SellerNavHelper.setup(this, R.id.nav_account);
 
         List<SellerOrder> orders = new ArrayList<>();
-        orders.add(new SellerOrder("#1024", "12/10/2023, 14:30", "Alex Johnson", 282.00, SellerOrder.STATUS_NEW));
-        orders.add(new SellerOrder("#1025", "12/10/2023, 11:15", "Sophia Miller", 112.50, SellerOrder.STATUS_NEW));
-        orders.add(new SellerOrder("#1021", "11/10/2023, 16:45", "David Brown", 170.00, SellerOrder.STATUS_TO_SHIP));
-        orders.add(new SellerOrder("#1019", "10/10/2023, 09:20", "Emma Wilson", 340.00, SellerOrder.STATUS_SHIPPING));
-        orders.add(new SellerOrder("#1015", "08/10/2023, 13:00", "Michael Clark", 120.00, SellerOrder.STATUS_COMPLETE));
-        orders.add(new SellerOrder("#1012", "06/10/2023, 18:10", "Olivia Davis", 160.00, SellerOrder.STATUS_COMPLETE));
+        orders.add(new SellerOrder("#1024", "12/10/2023, 14:30", "Alex Johnson", 4280000.0, SellerOrder.STATUS_NEW));
+        orders.add(new SellerOrder("#1025", "12/10/2023, 11:15", "Sophia Miller", 2830000.0, SellerOrder.STATUS_NEW));
+        orders.add(new SellerOrder("#1021", "11/10/2023, 16:45", "David Brown", 4280000.0, SellerOrder.STATUS_TO_SHIP));
+        orders.add(new SellerOrder("#1019", "10/10/2023, 09:20", "Emma Wilson", 8530000.0, SellerOrder.STATUS_SHIPPING));
+        orders.add(new SellerOrder("#1015", "08/10/2023, 13:00", "Michael Clark", 3030000.0, SellerOrder.STATUS_COMPLETE));
+        orders.add(new SellerOrder("#1012", "06/10/2023, 18:10", "Olivia Davis", 4030000.0, SellerOrder.STATUS_COMPLETE));
 
         adapter = new SellerOrderAdapter(orders, new SellerOrderAdapter.OnOrderActionListener() {
             @Override

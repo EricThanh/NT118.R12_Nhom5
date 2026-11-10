@@ -138,13 +138,13 @@
 
                     <TextView
                         style="@style/SellerFieldLabel"
-                        android:text="Giá" />
+                        android:text="Giá (đ)" />
 
                     <EditText
                         android:id="@+id/et_price"
                         style="@style/SellerInput"
-                        android:hint="0.00"
-                        android:inputType="numberDecimal" />
+                        android:hint="0"
+                        android:inputType="number" />
                 </LinearLayout>
 
                 <LinearLayout

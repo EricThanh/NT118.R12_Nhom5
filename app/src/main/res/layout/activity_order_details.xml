@@ -13,7 +13,7 @@
         android:gravity="center_vertical"
         android:minHeight="60dp"
         android:orientation="horizontal"
-        android:paddingHorizontal="16dp">
+        android:paddingHorizontal="12dp">
 
         <ImageView
             android:id="@+id/btn_back"
@@ -41,19 +41,12 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/seller_border" />
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/bg_gray_light"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
-        android:padding="20dp">
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,28 +56,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/seller_bg_card"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="14dp">
 
                 <TextView
                     android:id="@+id/tv_order_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/seller_bg_badge"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:includeFontPadding="false"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="6dp"
-                    android:text="Đang chờ xác nhận"
-                    android:textColor="@color/seller_ink"
-                    android:textSize="14sp" />
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/tv_placed_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/montserrat_medium"
                     android:includeFontPadding="false"
                     android:text="Đặt lúc: 12/10/2023, 14:30"
@@ -95,30 +80,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/seller_bg_card"
+                android:background="@color/white"
                 android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:includeFontPadding="false"
-                    android:text="Thông tin người mua"
-                    android:textColor="@color/seller_ink"
-                    android:textSize="17sp" />
+                android:padding="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
                         android:background="@drawable/seller_bg_home_avatar"
                         android:contentDescription="@null"
                         android:scaleType="centerInside"
@@ -128,7 +102,7 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginStart="14dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -138,9 +112,9 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat_bold"
                             android:includeFontPadding="false"
-                            android:text="Nguyen Van A"
+                            android:text="Nguyễn Văn A"
                             android:textColor="@color/seller_ink"
-                            android:textSize="16sp" />
+                            android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/tv_buyer_phone"
@@ -151,44 +125,39 @@
                             android:includeFontPadding="false"
                             android:text="+84 912 345 678"
                             android:textColor="@color/text_body"
-                            android:textSize="14sp" />
+                            android:textSize="15sp" />
                     </LinearLayout>
 
                     <ImageView
                         android:id="@+id/btn_message_buyer"
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
-                        android:background="@drawable/seller_bg_search"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="Nhắn tin cho người mua"
-                        android:padding="10dp"
+                        android:padding="12dp"
                         android:src="@drawable/ic_chat"
                         app:tint="@color/seller_ink" />
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginVertical="14dp"
-                    android:background="@color/seller_border" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
                     android:gravity="top"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
                         android:contentDescription="@null"
                         android:src="@drawable/ic_location"
-                        app:tint="@color/seller_ink" />
+                        app:tint="@color/text_body" />
 
                     <TextView
                         android:id="@+id/tv_shipping_address"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/montserrat_medium"
                         android:includeFontPadding="false"
@@ -202,10 +171,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/seller_bg_card"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/tv_items_count_title"
@@ -229,25 +198,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/seller_bg_card"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
                 android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:includeFontPadding="false"
-                    android:text="Tóm tắt thanh toán"
-                    android:textColor="@color/seller_ink"
-                    android:textSize="17sp" />
+                android:padding="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -257,9 +216,9 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/montserrat_medium"
                         android:includeFontPadding="false"
-                        android:text="Phương thức thanh toán"
+                        android:text="Thanh toán"
                         android:textColor="@color/text_body"
-                        android:textSize="14sp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/tv_payment_method"
@@ -269,13 +228,13 @@
                         android:includeFontPadding="false"
                         android:text="MasterCard (**** 4242)"
                         android:textColor="@color/seller_ink"
-                        android:textSize="14sp" />
+                        android:textSize="15sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="12dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -286,7 +245,7 @@
                         android:includeFontPadding="false"
                         android:text="Phí vận chuyển"
                         android:textColor="@color/text_body"
-                        android:textSize="14sp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/tv_shipping_fee"
@@ -294,15 +253,15 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_semibold"
                         android:includeFontPadding="false"
-                        android:text="$2.00"
+                        android:text="30.000đ"
                         android:textColor="@color/seller_ink"
-                        android:textSize="14sp" />
+                        android:textSize="15sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginVertical="12dp"
+                    android:layout_marginVertical="16dp"
                     android:background="@color/seller_border" />
 
                 <LinearLayout
@@ -325,11 +284,13 @@
                         android:id="@+id/tv_total_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:ellipsize="end"
                         android:fontFamily="@font/montserrat_bold"
                         android:includeFontPadding="false"
-                        android:text="$282.00"
+                        android:maxLines="1"
+                        android:text="4.280.000đ"
                         android:textColor="@color/primary"
-                        android:textSize="22sp" />
+                        android:textSize="24sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

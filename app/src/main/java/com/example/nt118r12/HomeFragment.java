@@ -32,8 +32,8 @@ public class HomeFragment extends Fragment {
         RecyclerView rvNewProducts = view.findViewById(R.id.rv_new_products);
 
         List<Product> productList = new ArrayList<>();
-        productList.add(new Product("Nike React Miler", 170.0, false));
-        productList.add(new Product("Nike Air Max 270", 112.0, true));
+        productList.add(new Product("Nike React Miler", 4250000.0, false));
+        productList.add(new Product("Nike Air Max 270", 2800000.0, true));
 
         ProductAdapter productAdapter = new ProductAdapter(productList, true, product -> {
             Intent intent = new Intent(getContext(), com.example.nt118r12.ProductDetailActivity.class);

@@ -17,7 +17,6 @@ import com.google.android.material.slider.RangeSlider;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Set;
 
 public class FilterSortBottomSheet {
@@ -183,6 +182,6 @@ public class FilterSortBottomSheet {
     }
 
     private static String formatPrice(float value) {
-        return String.format(Locale.US, "$%.0f", value);
+        return MoneyUtil.vnd(value);
     }
 }

@@ -15,7 +15,7 @@ import com.example.nt118r12.models.SellerOrder;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+import com.example.nt118r12.MoneyUtil;
 
 public class OrderDetailsActivity extends AppCompatActivity {
     public static final String EXTRA_ORDER = "EXTRA_ORDER";
@@ -58,7 +58,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
         ImageView btnMessageBuyer = findViewById(R.id.btn_message_buyer);
         btnMessageBuyer.setOnClickListener(v ->
-                Toast.makeText(this, "Mở trò chuyện với " + tvBuyerName.getText(), Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, "", Toast.LENGTH_SHORT).show());
 
         findViewById(R.id.btn_reject).setOnClickListener(v -> {
             Toast.makeText(this, "Đã từ chối đơn hàng", Toast.LENGTH_SHORT).show();
@@ -81,17 +81,17 @@ public class OrderDetailsActivity extends AppCompatActivity {
         String orderId = (passedOrder != null) ? passedOrder.getOrderId() : "#1024";
         String date = (passedOrder != null) ? passedOrder.getOrderDate() : "12/10/2023, 14:30";
         String buyer = (passedOrder != null) ? passedOrder.getBuyerName() : "Alex Johnson";
-        double total = (passedOrder != null) ? passedOrder.getTotalPrice() : 282.00;
+        double total = (passedOrder != null) ? passedOrder.getTotalPrice() : 4280000.0;
 
         tvToolbarTitle.setText("Đơn hàng " + orderId);
         tvPlacedDate.setText("Đặt lúc: " + date);
         tvBuyerName.setText(buyer);
-        tvTotalAmount.setText(String.format(Locale.US, "$%.2f", total));
+        tvTotalAmount.setText(MoneyUtil.vnd(total));
         tvOrderStatus.setText(getStatusLabel(passedOrder == null ? SellerOrder.STATUS_NEW : passedOrder.getStatus()));
 
         List<OrderItem> items = new ArrayList<>();
-        items.add(new OrderItem("Nike React Miler", "EU 42", 140.00, 1));
-        items.add(new OrderItem("Nike Air Max 270", "EU 43", 140.00, 1));
+        items.add(new OrderItem("Nike React Miler", "EU 42", 4250000.0, 1));
+        items.add(new OrderItem("Nike Air Max 270", "EU 43", 2800000.0, 1));
 
         tvItemsCountTitle.setText("Sản phẩm đã đặt (" + items.size() + ")");
         rvOrderItems.setAdapter(new OrderItemAdapter(items));
